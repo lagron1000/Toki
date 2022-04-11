@@ -7,8 +7,8 @@ function Signup() {
                 <h3 className="display-6">Sign Up</h3>
 
                 <div className="form-floating mb-3">
-                    <input type="email" className="form-control floatingInput" placeholder="name@example.com"></input>
-                    <label htmlFor="floatingInput">Email address</label>
+                    <input type={"text"} className="form-control floatingInput" placeholder="Username"></input>
+                    <label htmlFor="floatingInput">Username</label>
                 </div>
 
                 <div className="form-floating mb-3">
@@ -26,7 +26,7 @@ function Signup() {
                     <label className="input-group-text btn-primary" htmlFor="inputGroupFile02">Upload</label>
                 </div>
 
-                <a className="link" href="/login">Already have an account?</a>
+                <a className="link" href="/">Already have an account?</a>
             </div>
         </div>
     );

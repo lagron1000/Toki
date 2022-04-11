@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Login from './Forms/Login';
-import Signup from './Forms/Signup';
+// import Login from './Forms/Login';
+// import Signup from './Forms/Signup';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
