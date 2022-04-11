@@ -1,16 +1,21 @@
-import './Form.css';
-import Login from "./Login";
-import Signup from "./Signup";
+// import './Form.css';
+// import Login from "./Login";
+// import Signup from "./Signup";
 
-function Form() {
-    return (
-        <div className='FormContainer'>
-            <div className="Form">
-                {/* <Login></Login> */}
-                <Signup></Signup>
-            </div>
-        </div>
-    )
-}
+// function Form({isSigned}) {
 
-export default Form;
+//     const Form = () => {
+//         if (isSigned == "f") return 
+//     }
+
+//     return (
+//         <div className='FormContainer'>
+//             <div className="Form">
+//                 {/* <Login></Login> */}
+//                 {/* <Signup></Signup> */}
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Form;

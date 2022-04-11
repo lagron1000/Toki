@@ -16,3 +16,8 @@
   .display-6 {
       padding-bottom: 15px;
   }
+
+  .link {
+    text-decoration: none;
+    color: rgb(107, 180, 229);
+  }
