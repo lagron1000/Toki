@@ -11,7 +11,7 @@ import Signup from '../Forms/Signup';
 
 function Env() {
 
-    let signedIn = false;
+    let signedIn = true;
 
     const Startup = () => {
         if (signedIn) return (<Chat></Chat>);
@@ -23,7 +23,6 @@ function Env() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Startup />} />
-                    <Route path="/login" element={<Login />} />
                     <Route path="signup" element={<Signup />} />
                 </Routes>
             </BrowserRouter>
