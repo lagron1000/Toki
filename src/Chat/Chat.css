@@ -1,0 +1,24 @@
+.row {
+    display: flex;
+    padding-top: 10%;
+    padding-inline: 18%;
+  }
+  
+  .column {
+    flex: 20%;
+    padding: 10px;
+    float: left;
+    
+  }
+
+  #contacts {
+      background-color: blueviolet;
+      /* width: 25%; */
+      flex:5;
+
+  }
+
+  #chat {
+    background-color: rgb(196, 159, 230);
+    /* width: 75%; */
+  }

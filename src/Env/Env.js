@@ -1,11 +1,32 @@
 import './Env.css';
 import Form from '../Forms/Form';
+import Chat from '../Chat/Chat';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from "react-router-dom";
+import Login from '../Forms/Login';
+import Signup from '../Forms/Signup';
 
 function Env() {
-    return(
+
+    let signedIn = false;
+
+    const Startup = () => {
+        if (signedIn) return (<Chat></Chat>);
+        return (<Login></Login>);
+    }
+
+    return (
         <div className="Main">
-            {/* <p>Toki</p> */}
-            <Form></Form>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Startup />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="signup" element={<Signup />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     )
 }
