@@ -4,9 +4,8 @@ import Contact from "./Contact";
 function Contacts() {
 
     const elements = contactList.map((c, key) => {
-        debugger;
-        return <Contact name={c.name} img={'../../../Data/' + c.img} key={key} ></Contact>
-
+        // debugger;
+        return <Contact name={c.name} img={`./images/${c.img}`} key={key} ></Contact>
     })
 
     return (

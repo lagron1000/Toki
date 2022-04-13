@@ -1,4 +1,4 @@
-import im from '../../../Data/guy.png'
+// import im from '../../../Data/guy.png'
 function Contact({name, img}) {
 
 
