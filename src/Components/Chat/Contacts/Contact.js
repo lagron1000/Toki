@@ -1,4 +1,3 @@
-// import im from '../../../Data/guy.png'
 function Contact({name, img}) {
 
 
@@ -6,7 +5,7 @@ function Contact({name, img}) {
     return(
         <div>
             <p>{name}</p>
-            <img src={img}></img>
+            <img className="pfp mb-3" src={img}></img>
         </div>
     )
 }

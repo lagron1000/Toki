@@ -22,3 +22,7 @@
     flex:2
     /* width: 75%; */
   }
+  .pfp {
+    width: 30%;
+    border-radius: 100%;
+  }
