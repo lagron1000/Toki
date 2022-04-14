@@ -15,13 +15,6 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  // <BrowserRouter>
-  //   <Routes>
-  //     <Route path="/" element={<App />} />
-  //     <Route path="/login" element={<App />} />
-  //     <Route path="signup" element={<Signup />} />
-  //   </Routes>
-  // </BrowserRouter>,
   document.getElementById('root')
 );
 
