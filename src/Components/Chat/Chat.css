@@ -8,17 +8,43 @@
     /* flex: 20%; */
     padding: 10px;
     float: left;
+    border-style: groove;
   }
+  @keyframes move {
+
+      0% {background-color: rgb(95, 181, 181);}
+      10% {background-color: rgb(156, 228, 204);}
+      20% {background-color: burlywood;}
+      30% {background-color: rgb(246, 195, 176);}
+      40% {background-color: lightpink;}
+      50% {background-color: (246, 195, 176);}
+      60% {background-color: burlywood;}
+      70% {background-color: rgb(156, 228, 204);}
+      100% {background-color: rgb(95, 181, 181);}
+    }
 
   #chat {
-      background-color: blueviolet;
+
+      background-color: rgb(200, 192, 206);
       /* width: 25%; */
       flex:6;
+      animation: move 45s infinite;
 
   }
 
+  #contact {
+    border-style:dashed;
+    padding-left: 200px;
+  }
+/*rgb(36, 32, 39)*/
   #contacts  {
-    background-color: rgb(196, 159, 230);
+    background-color: rgb(226, 232, 202);
+    text-align: left;
+    border-style:groove;
+    color: rgb(47, 47, 44);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
+    padding-left: 20px;
+    
     flex:2
     /* width: 75%; */
   }
