@@ -32,10 +32,27 @@
 
   }
 
+  #buttons {
+    float:inline-end;
+    /* position: absolute; */
+    /* position:relative; */
+  }
+
+  #message {
+    background-color: rgb(200, 192, 206);
+  }
+
   #contact {
     border-style:dashed;
     padding-left: 200px;
   }
+
+  #contacts>:hover {
+    background-color: rgb(62, 61, 61);
+    cursor: pointer;
+    border-spacing: 10px;
+  }
+
 /*rgb(36, 32, 39)*/
   #contacts  {
     background-color: rgb(226, 232, 202);
