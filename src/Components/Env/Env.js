@@ -8,14 +8,34 @@ import {
 } from "react-router-dom";
 import Login from '../Forms/Login';
 import Signup from '../Forms/Signup';
+import { useState } from 'react';
+
+// let signedIn = false;
+
+// export function signIn() {
+//     signedIn = true;
+// }
+
 
 function Env() {
 
-    let signedIn = true;
+    const [signedIn, signIn] = useState(false);
+
+    // let signedIn = false;
+
+
+    // this.state.isSigned = false;
+    // this.setState
+
+    // function signIn() {
+    //     signedIn = true;
+    // }
 
     const Startup = () => {
         if (signedIn) return (<Chat></Chat>);
-        return (<Login></Login>);
+        return (<Login f={() => {
+            signIn(true);
+        }}></Login>);
     }
 
     return (

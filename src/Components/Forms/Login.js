@@ -1,18 +1,62 @@
 import './Form.css';
+import { useState } from 'react';
+import contactList from '../../Data/ContactList';
+import signIn from '../Env/Env';
+import Env from '../Env/Env';
+// im
 
-function Login() {
+function Login(f) {
+
+    const values = {
+        user: '',
+        pass: ''
+    }
+
+    const [formVals, setFormVals] = useState(values)
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormVals({ ...formVals, [name]: value })
+        console.log(formVals);
+    }
+
+    
+    const handleSubmit = () => {
+        debugger
+        console.log(contactList)
+        var found = contactList.find((c)=> {
+            if (c.user == formVals["user"]) return c;
+        })
+        if (found) {
+            if (found.pword == formVals["pass"]) {
+                // debugger
+                // Env.signIn();
+                var func = f['f'];
+                func();
+                // window.location.href = '/'
+            }
+        }
+    }
+
     return (
         <div className='FormContainer'>
             <div className="Form">
                 <h3 className="display-6">Login</h3>
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control" id="floatingInput" placeholder="Username"></input>
+                    <input name='user' value={formVals.user} onChange={handleChange} 
+                    type="text" className="form-control" id="floatingInput" placeholder="Username"></input>
                     <label htmlFor="floatingInput">Username</label>
                 </div>
+
                 <div className="form-floating mb-3">
-                    <input type="password" className="form-control" id="floatingPassword" placeholder="Password"></input>
+                    <input name='pass' value={formVals.pass} onChange={handleChange} 
+                    type="password" className="form-control" id="floatingPassword" placeholder="Password"></input>
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
+
+                <div className="input-group mb-3">
+                <a on class="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>
+                </div>
+
                 <a className="link" href="/signup">Don't have an account?</a>
             </div>
         </div>
