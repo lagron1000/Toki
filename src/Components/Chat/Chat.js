@@ -1,5 +1,6 @@
 import './Chat.css';
 import Contacts from './Contacts/Contacts'
+import Message from './messages/Message'
 function Chat() {
     return (
         <div>
@@ -7,7 +8,12 @@ function Chat() {
                 <div id='contacts' class="column">
                     <Contacts></Contacts>
                 </div>
-                <div id='chat' class="column">Chat</div>
+            <span id='chat' class="column"><Message></Message></span>
+            <div id='buttons' class="column">
+            <button type="button" class="btn btn-outline-warning">Warning</button>
+            <button type="button" class="btn btn-outline-info">Info</button>
+            <button type="button" class="btn btn-outline-light">Light</button>
+            <button type="button" class="btn btn-outline-dark">Dark</button></div>
             </div>
         </div>
     )
