@@ -38,6 +38,10 @@
     /* position:relative; */
   }
 
+  #input {
+    border-style:dashed;
+  }
+
   #message {
     background-color: rgb(200, 192, 206);
   }
