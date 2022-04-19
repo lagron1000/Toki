@@ -1,8 +1,22 @@
+// var defaultCH = [
+//     {
+//         'linmon' : [
+//             {content : "hi", time : "10:20", me : true}
+//         ],
+//         'nobort' : [
+//             {content : "allo", time : "10:20", me: false},
+//             {content : "ello", time : "10:21", me: true},
+//         ]
+//     }
+// ]
+
 var defaultCH = [
     {
         'linmon' : [
             {content : "hi", time : "10:20", me : true}
-        ],
+        ]
+    },
+    {
         'nobort' : [
             {content : "allo", time : "10:20", me: false},
             {content : "ello", time : "10:21", me: true},

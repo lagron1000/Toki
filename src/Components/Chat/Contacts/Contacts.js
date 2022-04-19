@@ -2,21 +2,21 @@ import contactList from "../../../Data/ContactList";
 import cList from '../../../Data/Contacts.json';
 import Contact from "./Contact";
 
-function Contacts(chatHistory) {
+function Contacts(ch) {
     debugger
     const elements = () => {
-        for (var c in chatHistory) {
+        for (var c in ch) {
             console.log(c);
         }
     }
-    // const elements = chatHistory.map((c, key) => {
+    // const elements = ch.map((c, key) => {
     //     debugger
 
     //     if(contactList.find(c.user)) {
     //         return <Contact name={c.name} img={`./images/${c.img}`} key={key} ></Contact>
     //     }
     // })
-console.log(chatHistory)
+console.log(ch)
     return (
         <div className="sideBar">
             

@@ -20,9 +20,9 @@ function InputBar() {
   }
   return (
     <div>
-      {/* <pre> {JSON.stringify(formValues</pre> action="input.php" method="post"target="_self" */}
+      {/* <pre> {JSON.stringify(formValues</pre> action="input.php" method="post"target="_self" */} 
       <form autoComplete="off" ><label>
-        <input type="text" name="msg" className="form-control"  placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" id="submitmsg" value={formVals.msg} onChange={handleChange} onClick={handleSubmit} /></label>
+        <input type="text" name="msg" className="form-control"  placeholder="enter message" aria-label="Recipient's username" aria-describedby="basic-addon2" id="submitmsg" value={formVals.msg} onChange={handleChange} onClick={handleSubmit} /></label>
         <input name="submitmsg" className="btn btn-outline-secondary" type="submit" value="Send" required onClick={handleSubmit} onClickCapture={handleSubmit} />
       </form>
       <button type="button" class="btn btn-outline-dark btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">

@@ -12,7 +12,6 @@ function Login({f, g}) {
     console.log(g)
 
     const test = () => {
-        debugger
         console.log("test")
         signUpFunc();
     }
@@ -31,7 +30,6 @@ function Login({f, g}) {
 
     
     const handleSubmit = () => {
-        debugger
         console.log(contactList)
         var found = contactList.find((c)=> {
             if (c.user == formVals["user"]) return c;
