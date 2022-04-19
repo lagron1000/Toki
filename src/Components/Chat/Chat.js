@@ -1,6 +1,7 @@
 import './Chat.css';
 import Contacts from './Contacts/Contacts'
-import SubmitButton from './messages/SubmitButton';
+import InputBar from './messages/InputBar';
+import Messages from './messages/Messages';
 import Message from './messages/Message'
 function Chat(user) {
     return (
@@ -9,15 +10,15 @@ function Chat(user) {
                 <div id='contacts' class="column">
                     <Contacts></Contacts>
                 </div>
-
-                <span id='chat' class="column"><Message></Message></span>
-                
-                    <div id='buttons' class="column">
-                    <button type="button" class="btn btn-outline-warning bi bi-images">Warning</button>
-                    
-                    <button type="button" class="btn btn-outline-info">Info</button>
-                    <button type="button" class="btn btn-outline-light">Light</button>
-                    <button type="button" class="btn btn-outline-dark">Dark</button></div>
+                <div id='chat' class="column">
+                <Messages></Messages>
+                <div className='iBar'>
+                <InputBar></InputBar>
+                </div>
+                </div>
+                {/* <span id='inputBar' class="column">
+                    <InputBar></InputBar>
+                </span> */}
             </div> 
         </div>
     )
