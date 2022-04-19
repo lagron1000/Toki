@@ -1,8 +1,7 @@
 import './Chat.css';
 import Contacts from './Contacts/Contacts'
 import InputBar from './messages/InputBar';
-import Messages from './messages/Messages';
-import Message from './messages/Message'
+import Messages from './messages/messages';
 function Chat(user) {
     debugger
     console.log(user.chatHistory)
@@ -13,7 +12,7 @@ function Chat(user) {
                     <Contacts chatHistory = {user.chatHistory}></Contacts>
                 </div>
                 <div id='chat' class="column">
-                    <Messages></Messages>
+                    <Messages chatHistory={user.chatHistory}></Messages>
                     <div className='iBar'>
                         <InputBar></InputBar>
                     </div>
