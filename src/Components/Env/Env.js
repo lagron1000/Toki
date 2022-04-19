@@ -12,20 +12,20 @@ import { useState } from 'react';
 
 function Env() {
 
-    const [signedIn, signIn] = useState(false);
+    const [signedIn, signIn] = useState(null);
 
     const [inOrOut, switchInOut] = useState(false);
 
     const Startup = () => {
-        if (signedIn) return (<Chat></Chat>);
+        if (signedIn != null) return (<Chat user={signedIn}></Chat>);
         return (<Form></Form>);
     }
 
-    const f = () => {signIn(true)};
+    const f = (user) => {signIn(user)};
 
     const g = () => {
-        debugger
-        switchInOut(!inOrOut)}
+        switchInOut(!inOrOut)
+    }
 
     const Form = () => {
         if (!inOrOut) return (<Login f={f} g={g}></Login>);
@@ -37,7 +37,6 @@ function Env() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Startup />} />
-                    {/* <Route path="signup" element={<Signup />} /> */}
                 </Routes>
             </BrowserRouter>
         </div>
