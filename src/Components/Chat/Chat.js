@@ -2,7 +2,7 @@ import './Chat.css';
 import Contacts from './Contacts/Contacts'
 import SubmitButton from './messages/SubmitButton';
 import Message from './messages/Message'
-function Chat() {
+function Chat(user) {
     return (
         <div>
             <div class="row g-0 no-gutters">
