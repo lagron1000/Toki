@@ -44,7 +44,7 @@ function Login({f, g}) {
     return (
         <div className='FormContainer'>
             <div className="Form">
-                <h3 className="display-6">Login</h3>
+                <h3 className="display-6">Sign In</h3>
                 <div className="form-floating mb-3">
                     <input name='user' value={formVals.user} onChange={handleChange} 
                     type="text" className="form-control" id="floatingInput" placeholder="Username"></input>
