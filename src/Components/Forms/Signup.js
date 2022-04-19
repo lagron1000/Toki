@@ -6,7 +6,10 @@ import * as helpers from './helpers';
 
 
 
-function Signup() {
+function Signup(g) {
+
+    var signInFunc = g["g"];
+
 
     const values = {
         id: '',
@@ -34,7 +37,7 @@ function Signup() {
             formVals["img"]
         )
         console.log(contactList);
-
+        signInFunc()
     }
 
     return (
@@ -70,10 +73,10 @@ function Signup() {
                 </div>
 
                 <div className="input-group mb-3">
-                <a on class="btn btn-secondary sub" type="submit" onClick={handleSubmit} href="/" >Submit</a>
+                <a on class="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>
                 </div>
 
-                <a className="link" href="/">Already have an account?</a>
+                <a className="link" onClick={signInFunc}>Already have an account?</a>
             </div>
         </div>
     );
