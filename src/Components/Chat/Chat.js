@@ -3,16 +3,15 @@ import Contacts from './Contacts/Contacts'
 import InputBar from './messages/InputBar';
 import Messages from './messages/messages';
 function Chat(user) {
-    debugger
-    console.log(user.chatHistory)
+        console.log(user)
     return (
         <div>
             <div class="row g-0 no-gutters">
                 <div id='contacts' class="column">
-                    <Contacts chatHistory = {user.chatHistory}></Contacts>
+                    <Contacts ch = {user.user.chatHistory}></Contacts>
                 </div>
                 <div id='chat' class="column">
-                    <Messages chatHistory={user.chatHistory}></Messages>
+                    <Messages ch={user.user.chatHistory}></Messages>
                     <div className='iBar'>
                         <InputBar></InputBar>
                     </div>
