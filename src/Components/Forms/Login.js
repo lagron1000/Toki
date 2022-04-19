@@ -5,7 +5,17 @@ import signIn from '../Env/Env';
 import Env from '../Env/Env';
 // im
 
-function Login(f) {
+function Login({f, g}) {
+
+    var signInFunc = f;
+    var signUpFunc = g;
+    console.log(g)
+
+    const test = () => {
+        debugger
+        console.log("test")
+        signUpFunc();
+    }
 
     const values = {
         user: '',
@@ -28,11 +38,7 @@ function Login(f) {
         })
         if (found) {
             if (found.pword == formVals["pass"]) {
-                // debugger
-                // Env.signIn();
-                var func = f['f'];
-                func();
-                // window.location.href = '/'
+                signInFunc();
             }
         }
     }
@@ -57,7 +63,7 @@ function Login(f) {
                 <a on class="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>
                 </div>
 
-                <a className="link" href="/signup">Don't have an account?</a>
+                <a className="link" onClick={test} >Don't have an account?</a>
             </div>
         </div>
     );
