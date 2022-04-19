@@ -1,28 +1,38 @@
-import {contactList, addCon} from "../../Data/ContactList";
- 
-const valName = (name) => {
+import contactList from "../../Data/ContactList";
+
+export function valName(name) {
     var valid = true;
-    for (c in contactList) {
+    for (var c in contactList) {
         if (c.name == name) valid = false;
     }
     return valid;
 }
 
-const valPass1 = (pass) => {
-    var pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-    return pattern.test(pass);
+export function valPass1(pass) {
+    // var pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+    // return pattern.test(pass);
+    return 1
 }
 
-const valPass2 = (pass1, pass2) => {
+export function valPass2(pass1, pass2) {
     return pass1 == pass2;
 }
 
 
 
-const validate = (username, pass1, pass2, img) => {
+export function validate(username, pass1, pass2, img) {
     return valName(username) && valPass1(pass1) && valPass2(pass1, pass2);
 }
 
-const register = (name, user, pass, img) => {
-    addCon(name, user, pass, img);
+export function register(name, user, pass, img) {
+    // addCon(name, user, pass, img);
+    var newId = contactList.length + 1;
+    var con = {
+        id: newId,
+        name: name,
+        img: img,
+        user: user,
+        pword: pass
+    }
+    contactList.push(con);
 }
