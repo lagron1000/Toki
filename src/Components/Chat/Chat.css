@@ -77,3 +77,9 @@
   .card:hover {
     background-color: rgb(221, 235, 248);
   }
+
+  .iBar {
+    /* background-color: blueviolet; */
+    margin-top: 107%;
+    width: 100%;
+  }
