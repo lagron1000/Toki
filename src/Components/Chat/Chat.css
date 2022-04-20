@@ -84,6 +84,7 @@
   }
 
   #display_image {
+    position:sticky;
     display: flex;
     width: 320px;
     height: 240px;
@@ -93,6 +94,8 @@
   }
 
   #display_video {
+    max-width: 100%;
+    height: auto;
     background-clip: border-box;
     display: flex;
     background-size: auto;
