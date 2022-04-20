@@ -80,8 +80,17 @@
 
   #display_image {
     display: flex;
-    width: 375px;
-    height: 211px;
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #display_video {
+    background-clip: border-box;
+    display: flex;
+    background-size: auto;
     border: 1px solid black;
     background-position: center;
     background-size: cover;
