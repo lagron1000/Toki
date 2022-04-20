@@ -9,12 +9,6 @@ function Login({f, g}) {
 
     var signInFunc = f;
     var signUpFunc = g;
-    console.log(g)
-
-    const test = () => {
-        console.log("test")
-        signUpFunc();
-    }
 
     const values = {
         user: '',
@@ -25,9 +19,7 @@ function Login({f, g}) {
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormVals({ ...formVals, [name]: value })
-        console.log(formVals);
     }
-
     
     const handleSubmit = () => {
         console.log(contactList)

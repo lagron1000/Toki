@@ -1,7 +1,10 @@
 import Message from "./Message";
 
 function messages(chatHistory) {
-    // const elements = messageList.map((m, key) => {
+
+    debugger
+    // const elements = chatHistory.map((m, key) => {
+    //     debugger
     //      return <Message content={m.content} time={m.time} key={key} ></Message>
     //  })
     
