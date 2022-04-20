@@ -5,9 +5,8 @@ import InputBar from './InputBar';
 function Message({ content, time }) {
     return (
         <div>
-            <div class="p-2 bd-highlight">content</div>
-            <div class="p-2 bd-highlight">time</div>
-            <div class="p-2 bd-highlight">Flex item 3</div>
+            <div class="p-2 bd-highlight">{content}</div>
+            <div class="p-2 bd-highlight">{time}</div>
         </div>
     );
 }

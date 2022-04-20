@@ -3,8 +3,9 @@ import cList from '../../../Data/Contacts.json';
 import Contact from "./Contact";
 
 function Contacts({ user, chooseChat }) {
-
-    // chooseChat = chooseChat["chooseChat"];
+    // function sumbitChat() {
+    //     chooseChat(friend)
+    // }
 
     var myCons = user.user.chatHistory;
 
@@ -14,7 +15,7 @@ function Contacts({ user, chooseChat }) {
         var lastMsg = c[name][numOfMsgs - 1];
         var friend = retCon(name);
         return (
-            <div key={key} onClick={chooseChat(friend)}>
+            <div key={key} onClick={()=>{chooseChat(c)}}>
                 <Contact friend={friend} img={`./images/${friend.img}`} lastMsg={lastMsg} meObj={user} ></Contact>
             </div>
         )
