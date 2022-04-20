@@ -32,7 +32,8 @@ export function register(name, user, pass, img) {
         name: name,
         img: img,
         user: user,
-        pword: pass
+        pword: pass,
+        chatHistory : []
     }
     contactList.push(con);
 }
