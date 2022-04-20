@@ -85,3 +85,11 @@
     width: -moz-fit-content;
     width: fit-content;
   }
+
+  .content {
+    display: flex;
+  }
+
+  .cardText {
+    align-self: flex-end;
+  }

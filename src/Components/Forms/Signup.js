@@ -3,9 +3,6 @@ import contactList from '../../Data/ContactList';
 import './Form.css';
 import * as helpers from './helpers';
 
-
-
-
 function Signup(g) {
 
     var signInFunc = g["g"];
@@ -24,12 +21,9 @@ function Signup(g) {
     const handleChange = (event) => {
         const {name, value} = event.target;
         setFormVals({...formVals, [name]:value})
-        console.log(formVals);
     }
 
     const handleSubmit = () => {
-        //validate
-        debugger
         helpers.register(
             formVals["fullName"],
             formVals["user"],
