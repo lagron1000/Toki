@@ -50,7 +50,7 @@ function Login({f, g}) {
                 </div>
 
                 <div className="input-group mb-3">
-                <a on class="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>
+                <a on className="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>
                 </div>
 
                 <a className="link" onClick={signUpFunc} >Don't have an account?</a>

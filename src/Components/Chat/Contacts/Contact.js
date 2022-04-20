@@ -3,7 +3,7 @@ function Contact({ friend, img, lastMsg, meObj }) {
     var msgContent = lastMsg ? lastMsg.content : "";
 
     var msgSender
-    if (lastMsg) msgSender = lastMsg.me ? meObj.user.user.name + ":" : friend.name + ":";
+    if (lastMsg != null) msgSender = lastMsg.me ? meObj.user.name + ":" : friend.name + ":";
     else msgSender = ""
 
     var timeStamp = lastMsg ? lastMsg.time : "";

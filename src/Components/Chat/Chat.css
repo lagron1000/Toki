@@ -77,6 +77,11 @@
   .card:hover {
     background-color: rgb(221, 235, 248);
   }
+  
+  .card:active {
+    background-color: rgb(149, 167, 183);
+
+  }
 
   #display_image {
     display: flex;
@@ -109,4 +114,8 @@
 
   .cardText {
     align-self: flex-end;
+  }
+
+  .notMe {
+    text-align: right;
   }
