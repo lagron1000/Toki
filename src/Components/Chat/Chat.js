@@ -2,13 +2,11 @@ import { useState } from 'react';
 import './Chat.css';
 import Contacts from './Contacts/Contacts'
 import InputBar from './messages/InputBar';
-import Messages from './messages/messages';
+import Messages from './messages/Messages';
 function Chat(user) {
 
     const [currentChat, chatStateSwitch] = useState(null);
     
-    let lastChatState = null;
-
     const chooseChat = (chat) => {
         chatStateSwitch(chat)
     }
@@ -18,10 +16,10 @@ function Chat(user) {
         else return (
             <div className='messages'>
                 {/* <Messages ch={user.user.chatHistory}></Messages> */}
-                <Messages chat={currentChat} ></Messages>
-                <div className='iBar'>
-                    <InputBar></InputBar>
-                </div>
+                <Messages user={currentChat} chooseChat={chooseChat} ></Messages>
+                {/* <div className='iBar'>
+                    <InputBar chat={currentChat} chooseChat={chooseChat}></InputBar>
+                </div> */}
             </div>
         )
     }
