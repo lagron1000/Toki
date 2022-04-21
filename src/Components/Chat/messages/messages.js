@@ -1,15 +1,24 @@
+import { useState } from "react";
 import { retCon } from "../../../Data/ContactList";
+import InputBar from "./InputBar";
 import Message from "./Message";
 
-function messages(user) {
-    user = user["chat"];
+function Messages({user, chooseChat}) {
+
+    var msgTemplate = { content: "", time: "", me: true };
     var friendName = Object.keys(user)[0]
     var friend = retCon(friendName)
     var ch = user[friendName];
     console.log(user)
 
+    const [currentUser, setNewUser] = useState(false);
+
+    
+    const changeUser = () => {
+        setNewUser(!currentUser);
+    }
+
     const elements = ch.map((m, key) => {
-        debugger
         console.log(m)
         if (m.me) {
             return (
@@ -22,7 +31,8 @@ function messages(user) {
             return (
                 <div className="notMe">
                     <Message content={m.content} time={m.time} key={key} ></Message>
-                </div>            )
+                </div>
+            )
     })
 
     console.log(user)
@@ -30,9 +40,12 @@ function messages(user) {
         <div className="chat">
             <div className="messageList">
                 {elements}
+                <div className='iBar'>
+                    <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
+                </div>
             </div>
         </div>
     )
 }
 
-export default messages;
+export default Messages;
