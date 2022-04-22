@@ -8,7 +8,6 @@ function Chat(user) {
     const [currentChat, chatStateSwitch] = useState(null);
     
     let lastChatState = null;
-
     const chooseChat = (chat) => {
         chatStateSwitch(chat)
     }
