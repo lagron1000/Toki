@@ -6,7 +6,7 @@ import Messages from './messages/Messages';
 function Chat(user) {
 
     const [currentChat, chatStateSwitch] = useState(null);
-    
+
     const chooseChat = (chat) => {
         chatStateSwitch(chat)
     }
