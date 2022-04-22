@@ -42,9 +42,41 @@
   border-style:dashed;
 }
 
+
 #message {
   background-color: rgb(200, 192, 206);
 }
+
+  .card:hover {
+    background-color: rgb(221, 235, 248);
+  }
+  
+  .card:active {
+    background-color: rgb(149, 167, 183);
+
+  }
+
+  #display_image {
+    position:sticky;
+    display: flex;
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #display_video {
+    max-width: 100%;
+    height: auto;
+    background-clip: border-box;
+    display: flex;
+    background-size: auto;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+  }
+
 
 #contact {
   border-style:dashed;

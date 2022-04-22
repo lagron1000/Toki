@@ -6,27 +6,39 @@ import { useState } from "react";
 
 //text input
 const image_input = document.querySelector("#image_input");
-function InputBar() {
-  const messages = [];
-  const values = {
-    msg: ""
+function InputBar({chat, chooseChat, changeUser}) {
+
+  var friendName = Object.keys(chat)[0];
+  var messages = chat[friendName];
+  var newChat = chat;
+
+  const msgTemplate = {
+    content: "",
+    time: "",
+    me: true
   }
-  const [formVals, setFormVals] = useState(values)
+
+  const [formVals, setFormVals] = useState(msgTemplate)
+
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormVals({ ...formVals, [name]: value })
-    event.preventDefault();
-    console.log(formVals);
+    msgTemplate.content = event.target.value;
+    var today = new Date();
+    msgTemplate.time = today.getHours() + ":" + today.getMinutes()
+    setFormVals(msgTemplate);
   }
+
   const handleSubmit = () => {
-    messages.push(values.msg);
-    for (let i = 0; i < messages.length; i++) {
-      console.log(messages[i]);
-    }
+    debugger
+    messages.push(formVals)
+    newChat[friendName] = messages
+    chooseChat(newChat);
+    changeUser();
+    // formVals.content = "";
   }
 
   //video + picture input
   const [file, setFile] = useState();
+
   function handleChangeInFile(e) {
      debugger
     console.log(e.target.files);
@@ -89,8 +101,12 @@ function InputBar() {
   return (
     <div> 
       <form autoComplete="off" ><label>
-        <input type="text" name="msg" className="form-control"  placeholder="enter message" aria-label="Recipient's username" aria-describedby="basic-addon2" id="submitmsg" value={formVals.msg} onChange={handleChange} onClick={handleSubmit} /></label>
-        <input name="submitmsg" className="btn btn-outline-secondary" type="submit" value="Send" required onClick={handleSubmit} onClickCapture={handleSubmit} />
+        <input type="text" name="msg" className="form-control" placeholder="enter message"
+          aria-label="Recipient's username" aria-describedby="basic-addon2" id="submitmsg"
+          value={formVals.msg} onChange={handleChange}/></label>
+          <a on className="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Send</a>
+        {/* <input name="submitmsg" className="btn btn-outline-secondary"
+          type="submit" value="Send" required onClick={handleSubmit} onClickCapture={handleSubmit} /> */}
       </form>
 
       {/* image uploading button */}
@@ -101,11 +117,12 @@ function InputBar() {
         </svg></label>
       <div id="display_image">
       <img src = {file}/></div>
+
      {/* video uploading button */}
       <input type="file" id="video_button" accept="video/*" onChange={handleChangeInFile} hidden></input>
-        <label for="video_button" class="btn btn-outline-dark btn-sm" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+      <label for="video_button" class="btn btn-outline-dark btn-sm" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
         <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" />
-      </svg></label> 
+      </svg></label>
       <div id="display_video">
       <video src = {file} width="320" height="240" controls></video></div>
       {/* audio uploading button */}
