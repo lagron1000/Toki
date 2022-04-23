@@ -20,8 +20,21 @@ function Signup(g) {
     const [formVals, setFormVals] =  useState(values)
     
     const handleChange = (event) => {
-        const {name, value} = event.target;
-        setFormVals({...formVals, [name]:value})
+        debugger
+
+        // const {name, value} = event.target;
+        // setFormVals({...formVals, [name]:value})
+        formVals[event.target.name] = event.target.value
+        setFormVals({...formVals, formVals})
+    }
+
+    const handleImg = (e) => {
+        debugger
+        var link = URL.createObjectURL(e.target.files[0])
+        const {name, value} = e.target;
+        formVals.img=link;
+        setFormVals({...formVals, formVals});
+
     }
 
     const handleSubmit = () => {
@@ -63,7 +76,7 @@ function Signup(g) {
                 </div>
 
                 <div className="input-group mb-3">
-                    <input name='img' value={formVals.img} onChange={handleChange} type="file" className="form-control inputGroupFile02"></input>
+                    <input name='img' onChange={handleImg} type="file" className="form-control inputGroupFile02"></input>
                     {/* <label className="input-group-text btn-primary" htmlFor="inputGroupFile02">Upload</label> */}
                 </div>
 

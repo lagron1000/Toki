@@ -17,7 +17,6 @@ function Login({f, g}) {
 
     const [formVals, setFormVals] = useState(values)
     const handleChange = (event) => {
-        debugger
         if (event.code === "Enter" || event.code === "NumpadEnter") {
             handleSubmit();
         }
