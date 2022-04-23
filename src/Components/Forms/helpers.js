@@ -25,7 +25,6 @@ export function validate(username, pass1, pass2, img) {
 }
 
 export function register(name, user, pass, img) {
-    // addCon(name, user, pass, img);
     var newId = contactList.length + 1;
     var con = {
         id: newId,
