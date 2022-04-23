@@ -129,7 +129,13 @@
 .cardText {
   align-self: flex-end;
 }
-
+.scroller {
+  width: 600px;
+  height: 400px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: auto;
+}
 .me {
   border-top: 1px solid rgba(0, 0, 0, .05);
   padding: 10px;

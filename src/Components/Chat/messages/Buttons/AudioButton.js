@@ -1,6 +1,6 @@
 //audio recording
 function AudioButton() {
-  let audioIN = { audio: true };
+let audioIN = { audio: true };
 navigator.mediaDevices.getUserMedia(audioIN)
   .then(function (mediaStreamObj) {
     let audio = document.querySelector("audio");
