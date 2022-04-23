@@ -6,7 +6,7 @@ import { useState } from "react";
 
 //text input
 const image_input = document.querySelector("#image_input");
-function InputBar({chat, chooseChat, changeUser}) {
+function InputBar({ chat, chooseChat, changeUser }) {
 
   var friendName = Object.keys(chat)[0];
   var messages = chat[friendName];
@@ -21,10 +21,16 @@ function InputBar({chat, chooseChat, changeUser}) {
   const [formVals, setFormVals] = useState(msgTemplate)
 
   const handleChange = (event) => {
-    msgTemplate.content = event.target.value;
-    var today = new Date();
-    msgTemplate.time = today.getHours() + ":" + today.getMinutes()
-    setFormVals(msgTemplate);
+    if (event.code === "Enter" || event.code === "NumpadEnter") {
+      event.preventDefault();
+      handleSubmit();
+    }
+    else {
+      msgTemplate.content = event.target.value;
+      var today = new Date();
+      msgTemplate.time = today.getHours() + ":" + today.getMinutes()
+      setFormVals(msgTemplate);
+    }
   }
 
   const handleSubmit = () => {
@@ -33,7 +39,9 @@ function InputBar({chat, chooseChat, changeUser}) {
     newChat[friendName] = messages
     chooseChat(newChat);
     changeUser();
-    // formVals.content = "";
+
+    const msgInput = document.getElementById('submitmsg');
+    msgInput.value = ""
   }
 
   //video + picture input
@@ -99,12 +107,15 @@ function InputBar({chat, chooseChat, changeUser}) {
     });
 
   return (
-    <div> 
-      <form autoComplete="off" ><label>
-        <input type="text" name="msg" className="form-control" placeholder="enter message"
-          aria-label="Recipient's username" aria-describedby="basic-addon2" id="submitmsg"
-          value={formVals.msg} onChange={handleChange}/></label>
-          <a on className="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Send</a>
+    <div>
+      {/* <pre> {JSON.stringify(formValues</pre> action="input.php" method="post"target="_self" */}
+      <form autoComplete="off" >
+        <label>
+          <input type="text" name="msg" className="form-control" placeholder="enter message"
+           aria-describedby="basic-addon2" id="submitmsg"
+            value={msgTemplate.msg} onChange={handleChange} onKeyDown ={handleChange} />
+        </label>
+        <a on className="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Send</a>
         {/* <input name="submitmsg" className="btn btn-outline-secondary"
           type="submit" value="Send" required onClick={handleSubmit} onClickCapture={handleSubmit} /> */}
       </form>

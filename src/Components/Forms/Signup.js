@@ -18,6 +18,7 @@ function Signup(g) {
     }
     
     const [formVals, setFormVals] =  useState(values)
+    
     const handleChange = (event) => {
         const {name, value} = event.target;
         setFormVals({...formVals, [name]:value})
