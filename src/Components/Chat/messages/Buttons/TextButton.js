@@ -33,6 +33,8 @@ function TextButton({chat, chooseChat, changeUser}) {
       chooseChat(newChat);
       changeUser();
       // formVals.content = "";
+      const msgInput = document.getElementById('submitmsg');
+      msgInput.value = ""
     }
     return(
         <form autoComplete="off" ><label>

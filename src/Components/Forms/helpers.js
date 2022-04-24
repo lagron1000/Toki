@@ -37,3 +37,38 @@ export function register(name, user, pass, img) {
     }
     contactList.push(con);
 }
+// export function passwordLength(pass) {
+
+// }
+export function isValid(values) {
+    const regexName = /[a-zA-Z_]+/;
+    const regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+    const errors = {};
+    if(!values.fullName) {
+        errors.fullName = "Name is required!"
+    } else if(!regexName.test(values.pword)) {
+        errors.fullName = "Must contain both uppercase and lowercase letters only, " +
+        "and no longer than 25 characters!"
+    }
+    if(!values.user) {
+        errors.user = "Username is required!"
+    }
+    if(!values.fullName) {
+        errors.fullName = "Name is required!"
+    }
+    if(!values.pword) {
+        errors.pword = "Password is required!"
+    } else if(!regexPass.test(values.pword)) {
+        errors.pword = "Must contain at least one number and one" +
+        " uppercase and lowercase letter, and at least 8 or more characters!"
+    }
+    if(!values.pword2) {
+        errors.pword2 = "Confirm password!"
+    } else if(values.pword !== values.pword2) {
+        errors.pword = "Must be the same password!"
+    }
+    if(!values.img) {
+        errors.img = "Image is required!"
+    }
+    return errors;
+}
