@@ -17,8 +17,13 @@ function Login({f, g}) {
 
     const [formVals, setFormVals] = useState(values)
     const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormVals({ ...formVals, [name]: value })
+        if (event.code === "Enter" || event.code === "NumpadEnter") {
+            handleSubmit();
+        }
+        else {
+            const { name, value } = event.target;
+            setFormVals({ ...formVals, [name]: value })
+        }
     }
     
     const handleSubmit = () => {
@@ -38,13 +43,13 @@ function Login({f, g}) {
             <div className="Form">
                 <h3 className="display-6">Sign In</h3>
                 <div className="form-floating mb-3">
-                    <input name='user' value={formVals.user} onChange={handleChange} 
+                    <input name='user' value={formVals.user} onChange={handleChange} onKeyDown ={handleChange}
                     type="text" className="form-control" id="floatingInput" placeholder="Username"></input>
                     <label htmlFor="floatingInput">Username</label>
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input name='pass' value={formVals.pass} onChange={handleChange} 
+                    <input name='pass' value={formVals.pass} onChange={handleChange} onKeyDown ={handleChange}
                     type="password" className="form-control" id="floatingPassword" placeholder="Password"></input>
                     <label htmlFor="floatingPassword">Password</label>
                 </div>

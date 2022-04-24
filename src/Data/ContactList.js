@@ -31,12 +31,12 @@ var defaultCH = [
 ]
 
 const contactList = [
-    {id : '1', name : 'Linor Agmon', img : 'guy.png', user : 'linmon', pword : '1', chatHistory : defaultCH},
-    {id : '2', name : 'Nofir Bort', img : 'lady.png', user : 'nobort', pword : '1234', chatHistory : defaultCH},
-    {id : '3', name : 'Limor Halfon', img : 'guy.png', user : 'limfon', pword : '1234', chatHistory : defaultCH},
-    {id : '4', name : 'Liron Admon', img : 'guy.png', user : 'lirmon', pword : '1234', chatHistory : defaultCH},
-    {id : '5', name : 'Namir Brot', img : 'lady.png', user : 'naroto', pword : '1234', chatHistory : defaultCH},
-    {id : '5', name : 'Lihor', img : 'lady.png', user : 'l', pword : 'l', chatHistory : defaultCH}
+    {id : '1', name : 'Linor Agmon', img : './images/guy.png', user : 'linmon', pword : '1', chatHistory : defaultCH},
+    {id : '2', name : 'Nofir Bort', img : './images/lady.png', user : 'nobort', pword : '1234', chatHistory : defaultCH},
+    {id : '3', name : 'Limor Halfon', img : './images/guy.png', user : 'limfon', pword : '1234', chatHistory : defaultCH},
+    {id : '4', name : 'Liron Admon', img : './images/guy.png', user : 'lirmon', pword : '1234', chatHistory : defaultCH},
+    {id : '5', name : 'Namir Brot', img : './images/lady.png', user : 'naroto', pword : '1234', chatHistory : defaultCH},
+    {id : '5', name : 'Lihor', img : './images/lady.png', user : 'l', pword : 'l', chatHistory : defaultCH}
 ];
 
 export function retCon(name) {

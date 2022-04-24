@@ -11,20 +11,58 @@ import FileButtons from "./Buttons/FileButtons";
 // import AudioReactRecorder, { RecordState } from 'audio-react-recorder'
 
 //text input
-function InputBar({chat, chooseChat, changeUser}) {
+
+const image_input = document.querySelector("#image_input");
+function InputBar({ chat, chooseChat, changeUser }) {
+
+  var friendName = Object.keys(chat)[0];
+  var messages = chat[friendName];
+  var newChat = chat;
+
+  const msgTemplate = {
+    content: "",
+    time: "",
+    me: true
+  }
+
+  const [formVals, setFormVals] = useState(msgTemplate)
+
+  const handleChange = (event) => {
+    if (event.code === "Enter" || event.code === "NumpadEnter") {
+      event.preventDefault();
+      handleSubmit();
+    }
+    else {
+      msgTemplate.content = event.target.value;
+      var today = new Date();
+      msgTemplate.time = today.getHours() + ":" + today.getMinutes()
+      setFormVals(msgTemplate);
+    }
+  }
+
+  const handleSubmit = () => {
+    messages.push(formVals)
+    newChat[friendName] = messages
+    chooseChat(newChat);
+    changeUser();
+
+    const msgInput = document.getElementById('submitmsg');
+    msgInput.value = ""
+  }
 
   //video + picture input
   const [file, setFile] = useState(null);
 
   const chooseFileType = (neededFileType) => {
     debugger;
-    setFile(neededFileType)}
+    setFile(neededFileType)
+  }
   return (
     <div>
       <nav>
         <ul>
           <li>
-          <TextButton chat = {chat} chooseChat = {chooseChat} changeUser = {changeUser}></TextButton>
+            <TextButton chat={chat} chooseChat={chooseChat} changeUser={changeUser}></TextButton>
           </li>
           <li>
              <AudioButton></AudioButton>
@@ -50,6 +88,7 @@ function InputBar({chat, chooseChat, changeUser}) {
           </li>
         </ul>
       </nav>
+<<<<<<< HEAD
       {/* <TextButton chat = {chat} chooseChat = {chooseChat} changeUser = {changeUser}></TextButton> */}
       {/* <FileButtons id={"image_button"} accepts={"image/*"} link1={"M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"}
         link2={"M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"}
@@ -68,6 +107,8 @@ function InputBar({chat, chooseChat, changeUser}) {
       {/* audio uploading button */}
       <audio controls hidden></audio>
       <audio id="audioPlay" controls></audio>
+=======
+>>>>>>> 18c18ffb587c6b0257214d24798e9b7fd5ba3836
     </div>
   );
 }
