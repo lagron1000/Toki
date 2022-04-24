@@ -2,10 +2,24 @@ import { useState, useEffect } from 'react';
 import contactList from '../../Data/ContactList';
 import './Form.css';
 import * as helpers from './helpers';
-
 function Signup(g) {
 
     var signInFunc = g["g"];
+    // const form = document.getElementById('form')
+    // form.addEventListener("submit", (event) => {
+
+        // helpers.register(
+        //     formVals["fullName"],
+        //     formVals["user"],
+        //     formVals["pword"],
+        //     formVals["img"]
+        // )
+        // console.log(contactList);
+        // // event.preventDefault;
+        // if (checkInputs()) {
+        //    signInFunc() 
+        // }
+    // })
     const values = {
         id: '',
         fullName: '',
@@ -40,20 +54,20 @@ function Signup(g) {
     }
     
     const handleSubmit = (e) => {
+        console.log(contactList);
+        
         helpers.register(
             formVals["fullName"],
             formVals["user"],
             formVals["pword"],
+            formVals["pword2"],
             formVals["img"]
         )
-        console.log(contactList);
         e.preventDefault();
-        debugger;
-        setFormErrors(helpers.isValid(formVals));
+        const formErrors = helpers.isValid(formVals);
+        setFormErrors({...formErrors, formErrors});
         setIsSubmit(true);
         if(Object.keys(formErrors).length===0) {
-            debugger;
-            
             signInFunc();
         }
     }

@@ -72,7 +72,7 @@ export function isValid(values) {
     } else if(!regexPass.test(values.pword)) {
         errors.pword = "Must contain at least one number and one" +
         " uppercase and lowercase letter, and at least 8 or more characters!"
-    } 
+    }
     if(!values.pword2) {
         errors.pword2 = "Confirm password!"
     } else if(values.pword !== values.pword2) {
