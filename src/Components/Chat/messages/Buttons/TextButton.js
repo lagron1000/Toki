@@ -33,11 +33,6 @@ function TextButton({chat, chooseChat, changeUser}) {
       newChat[friendName] = messages
       chooseChat(newChat);
       changeUser();
-<<<<<<< HEAD
-      // formVals.content = "";
-=======
-  
->>>>>>> 18c18ffb587c6b0257214d24798e9b7fd5ba3836
       const msgInput = document.getElementById('submitmsg');
       msgInput.value = ""
     }
