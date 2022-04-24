@@ -61,13 +61,14 @@
     height: 60px;
     border-radius: 100px;
     background-color: azure;
+    padding:10px 0px 0px;
   }
 
   nav ul{
     float: left;
     border-color: cadetblue;
     /* margin-top: 15px; */
-    padding: 10px;
+    padding: 7%,;
     
   }
   nav ul li{
