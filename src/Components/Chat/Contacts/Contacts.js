@@ -16,7 +16,7 @@ function Contacts({ user, chooseChat }) {
         var friend = retCon(name);
         return (
             <div key={key} onClick={()=>{chooseChat(c)}}>
-                <Contact friend={friend} img={`./images/${friend.img}`} lastMsg={lastMsg} meObj={user} ></Contact>
+                <Contact friend={friend} img={friend.img} lastMsg={lastMsg} meObj={user} ></Contact>
             </div>
         )
     })
