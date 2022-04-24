@@ -39,15 +39,25 @@ export function register(name, user, pass, img) {
 // export function passwordLength(pass) {
 
 // }
+export function isExist(values) {
+    const errors = {};
+    if (values === "user") {
+        errors.user = "User not found"
+    }
+    if (values === "password") {
+        errors.pass = "Password is incorrect!"
+    }
+    return errors;
+}
 export function isValid(values) {
-    const regexName = /[a-zA-Z_]+/;
+    const regexName = /^([a-zA-Z]+)( [a-zA-Z]+)$/;
     const regexPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
     const errors = {};
     if(!values.fullName) {
         errors.fullName = "Name is required!"
-    } else if(!regexName.test(values.pword)) {
-        errors.fullName = "Must contain both uppercase and lowercase letters only, " +
-        "and no longer than 25 characters!"
+    } else if(!regexName.test(values.fullName)) {
+        errors.fullName = "Must contain uppercase and lowercase letters only, " +
+        "and to be composed of two words with space in between!"
     }
     if(!values.user) {
         errors.user = "Username is required!"
@@ -57,14 +67,16 @@ export function isValid(values) {
     }
     if(!values.pword) {
         errors.pword = "Password is required!"
+    } else if(values.pword === "password") {
+        errors.pword = "Password can't be 'password!'"
     } else if(!regexPass.test(values.pword)) {
         errors.pword = "Must contain at least one number and one" +
         " uppercase and lowercase letter, and at least 8 or more characters!"
-    }
+    } 
     if(!values.pword2) {
         errors.pword2 = "Confirm password!"
     } else if(values.pword !== values.pword2) {
-        errors.pword = "Must be the same password!"
+        errors.pword2 = "Must be the same password!"
     }
     if(!values.img) {
         errors.img = "Image is required!"

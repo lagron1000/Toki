@@ -6,21 +6,6 @@ import * as helpers from './helpers';
 function Signup(g) {
 
     var signInFunc = g["g"];
-    // const form = document.getElementById('form')
-    // form.addEventListener("submit", (event) => {
-
-        // helpers.register(
-        //     formVals["fullName"],
-        //     formVals["user"],
-        //     formVals["pword"],
-        //     formVals["img"]
-        // )
-        // console.log(contactList);
-        // // event.preventDefault;
-        // if (checkInputs()) {
-        //    signInFunc() 
-        // }
-    // })
     const values = {
         id: '',
         fullName: '',
@@ -35,7 +20,6 @@ function Signup(g) {
     const [isSubmitted, setIsSubmit] = useState(false);
 
     const handleChange = (event) => {
-        debugger
         if (event.code === "Enter" || event.code === "NumpadEnter") {
             handleSubmit();
         }
@@ -48,7 +32,6 @@ function Signup(g) {
     }
 
     const handleImg = (e) => {
-        debugger
         var link = URL.createObjectURL(e.target.files[0])
         const {name, value} = e.target;
         formVals.img=link;
@@ -57,23 +40,22 @@ function Signup(g) {
     }
     
     const handleSubmit = (e) => {
+        helpers.register(
+            formVals["fullName"],
+            formVals["user"],
+            formVals["pword"],
+            formVals["img"]
+        )
+        console.log(contactList);
         e.preventDefault();
+        debugger;
         setFormErrors(helpers.isValid(formVals));
         setIsSubmit(true);
-
-        //   helpers.register(
-        //     formVals["fullName"],
-        //     formVals["user"],
-        //     formVals["pword"],
-        //     formVals["img"]
-        // )
-        // console.log(contactList);
-        // debugger;
-        // // event.preventDefault;
-        // // if (checkIfValid()) {
-        // //     debugger;
-        //    signInFunc() 
-        // }
+        if(Object.keys(formErrors).length===0) {
+            debugger;
+            
+            signInFunc();
+        }
     }
 
     useEffect(() => {
