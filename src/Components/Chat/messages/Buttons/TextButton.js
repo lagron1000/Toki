@@ -14,31 +14,35 @@ function TextButton({chat, chooseChat, changeUser}) {
     }
   
     const [formVals, setFormVals] = useState(msgTemplate)
+
     const handleChange = (event) => {
-        // if (objectURL === confirm) {
-        //     msgTemplate.file = fileObj;
-        // }
-        // else {
-            msgTemplate.content = event.target.value;
-        // }
-      var today = new Date();
-      msgTemplate.time = today.getHours() + ":" + today.getMinutes()
-      setFormVals(msgTemplate);
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        handleSubmit();
+      }
+      else {
+        msgTemplate.content = event.target.value;
+        var today = new Date();
+        msgTemplate.time = today.getHours() + ":" + today.getMinutes()
+        setFormVals(msgTemplate);
+      }
     }
   
     const handleSubmit = () => {
-      debugger
       messages.push(formVals)
       newChat[friendName] = messages
       chooseChat(newChat);
       changeUser();
-      // formVals.content = "";
+  
+      const msgInput = document.getElementById('submitmsg');
+      msgInput.value = ""
     }
+    
     return(
         <form autoComplete="off" ><label>
         <input type="text" name="msg" className="form-control" placeholder="enter message"
           aria-label="Recipient's username" aria-describedby="basic-addon2" id="submitmsg"
-          value={formVals.msg} onChange={handleChange} maxLength = "10" /></label>
+          value={formVals.msg} onChange={handleChange} onKeyDown={handleChange} maxLength = "10" /></label>
           <a on className="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Send</a>
         {/* <input name="submitmsg" className="btn btn-outline-secondary"
           type="submit" value="Send" required onClick={handleSubmit} onClickCapture={handleSubmit} /> */}

@@ -21,11 +21,15 @@ function Signup(g) {
     
     const handleChange = (event) => {
         debugger
-
+        if (event.code === "Enter" || event.code === "NumpadEnter") {
+            handleSubmit();
+        }
         // const {name, value} = event.target;
         // setFormVals({...formVals, [name]:value})
-        formVals[event.target.name] = event.target.value
-        setFormVals({...formVals, formVals})
+        else{
+            formVals[event.target.name] = event.target.value
+            setFormVals({...formVals, formVals})
+        }
     }
 
     const handleImg = (e) => {
@@ -55,23 +59,23 @@ function Signup(g) {
 
                 <div className="form-floating mb-3">
                     <input name='fullName' type={"text"} className="form-control floatingInput" placeholder="Name" 
-                    value={formVals.fullName} onChange={handleChange}></input>
+                    value={formVals.fullName} onChange={handleChange} onKeyDown ={handleChange}></input>
                     <label htmlFor="floatingInput">Name</label>
                 </div>
 
                 <div className="form-floating mb-3">
                     <input name='user' type={"text"} className="form-control floatingInput" placeholder="Username" 
-                    value={formVals.user} onChange={handleChange}></input>
+                    value={formVals.user} onChange={handleChange} onKeyDown ={handleChange}></input>
                     <label htmlFor="floatingInput">Username</label>
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input name='pword' value={formVals.pword} onChange={handleChange} type="password" className="form-control floatingPassword" placeholder="Password" ></input>
+                    <input name='pword' value={formVals.pword} onChange={handleChange} onKeyDown ={handleChange} type="password" className="form-control floatingPassword" placeholder="Password" ></input>
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
 
                 <div className="form-floating mb-3  ">
-                    <input name='pword2' value={formVals.pword2} onChange={handleChange} type="password" className="form-control floatingPasswordCon" placeholder="Confirm Password"></input>
+                    <input name='pword2' value={formVals.pword2} onChange={handleChange} onKeyDown ={handleChange} type="password" className="form-control floatingPasswordCon" placeholder="Confirm Password"></input>
                     <label htmlFor="floatingPasswordCon">Confirm Password</label>
                 </div>
 
