@@ -6,10 +6,10 @@ import Message from "./Message";
 function Messages({user, chooseChat}) {
 
     var msgTemplate = { content: "", time: "", me: true };
-    var friendName = Object.keys(user)[0]
-    var friend = retCon(friendName)
+    var friendName = Object.keys(user)[0];
+    var friend = retCon(friendName);
     var ch = user[friendName];
-    console.log(user)
+    console.log(user);
 
     const [currentUser, setNewUser] = useState(false);
 
@@ -39,7 +39,9 @@ function Messages({user, chooseChat}) {
     return (
         <div className="chat">
             <div className="messageList">
+            <div class="scroller">
                 {elements}
+                </div>
                 <div className='iBar'>
                     <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
                 </div>

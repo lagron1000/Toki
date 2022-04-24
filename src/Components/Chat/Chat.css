@@ -55,7 +55,56 @@
     background-color: rgb(149, 167, 183);
 
   }
+  
+  nav {
+    width: 100%;
+    height: 60px;
+    border-radius: 100px;
+    background-color: azure;
+    padding:10px 0px 0px;
+  }
 
+  nav ul{
+    float: left;
+    border-color: cadetblue;
+    /* margin-top: 15px; */
+    padding: 7%,;
+    
+  }
+  nav ul li{
+    float: left;
+    list-style: none;
+    position: relative;
+  }
+  nav ul li a{
+    display: block;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(33, 32, 33);
+    font-size: 20px;
+    padding: 22px, 14px;
+    text-decoration: none;
+  }
+  nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color: rgb(231, 206, 206);
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+  }
+  nav ul li:hover ul{
+    display: block;
+  }
+  nav ul li ul li{
+    width: 40px;
+    border-radius: 4px;
+  }
+  nav ul li ul li a{
+    padding: 8px, 14px;
+  }
+  nav ul li ul li a:hover{
+    background-color: rgb(209, 205, 201);
+    padding: 8px, 14px;
+  }
   #display_image {
     position:sticky;
     display: flex;
@@ -66,7 +115,7 @@
     background-size: cover;
   }
 
-  #display_video {
+  /* #display_video {
     max-width: 100%;
     height: auto;
     background-clip: border-box;
@@ -75,7 +124,7 @@
     border: 1px solid black;
     background-position: center;
     background-size: cover;
-  }
+  } */
 
 
 #contact {
@@ -115,27 +164,6 @@
 
 }
 
-#display_image {
-    position:sticky;
-  display: flex;
-  width: 320px;
-  height: 240px;
-  border: 1px solid black;
-  background-position: center;
-  background-size: cover;
-}
-
-#display_video {
-    max-width: 100%;
-    height: auto;
-  background-clip: border-box;
-  display: flex;
-  background-size: auto;
-  border: 1px solid black;
-  background-position: center;
-  background-size: cover;
-}
-
 .iBar {
   /* background-color: blueviolet; */
   margin-top: 60%;
@@ -150,7 +178,13 @@
 .cardText {
   align-self: flex-end;
 }
-
+.scroller {
+  width: 600px;
+  height: 400px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: auto;
+}
 .me {
   border-top: 1px solid rgba(0, 0, 0, .05);
   padding: 10px;
