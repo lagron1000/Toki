@@ -22,15 +22,15 @@ function Messages({user, chooseChat}) {
         console.log(m)
         if (m.me) {
             return (
-                <div className="me">
-                    <Message content={m.content} time={m.time} key={key} ></Message>
+                <div className="chat">
+                    <Message content={m.content} time={m.time} key={key} isMe={true} ></Message>
                 </div>
             )
         }
         else
             return (
-                <div className="notMe">
-                    <Message content={m.content} time={m.time} key={key} ></Message>
+                <div className="chat">
+                    <Message content={m.content} time={m.time} key={key} isMe={false}></Message>
                 </div>
             )
     })

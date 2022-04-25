@@ -41,11 +41,12 @@ function TextButton({chat, chooseChat, changeUser}) {
         <form autoComplete="off" ><label>
         <input type="text" name="msg" className="form-control" placeholder="enter message"
           aria-label="Recipient's username" aria-describedby="basic-addon2" id="submitmsg"
-          value={formVals.msg} onChange={handleChange} onKeyDown={handleChange} maxLength = "10" /></label>
+          value={formVals.msg} onChange={handleChange} onKeyDown={handleChange}  /></label>
           <a on className="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Send</a>
         {/* <input name="submitmsg" className="btn btn-outline-secondary"
           type="submit" value="Send" required onClick={handleSubmit} onClickCapture={handleSubmit} /> */}
       </form>
     );
 }
+//maxLength = "10"
 export default TextButton;

@@ -15,12 +15,13 @@ function Chat(user) {
         if (currentChat == null) return <div></div>
         else return (
             <div className='messages'>
+                {/* <div class="container"> */}
                 {/* <Messages ch={user.user.chatHistory}></Messages> */}
                 <Messages user={currentChat} chooseChat={chooseChat} ></Messages>
                 {/* <div className='iBar'>
                     <InputBar chat={currentChat} chooseChat={chooseChat}></InputBar>
-                </div> */}
-            </div>
+                </div> */}</div>
+            // </div>
         )
     }
 

@@ -5,21 +5,6 @@ import * as helpers from './helpers';
 function Signup(g) {
 
     var signInFunc = g["g"];
-    // const form = document.getElementById('form')
-    // form.addEventListener("submit", (event) => {
-
-        // helpers.register(
-        //     formVals["fullName"],
-        //     formVals["user"],
-        //     formVals["pword"],
-        //     formVals["img"]
-        // )
-        // console.log(contactList);
-        // // event.preventDefault;
-        // if (checkInputs()) {
-        //    signInFunc() 
-        // }
-    // })
     const values = {
         id: '',
         fullName: '',
@@ -120,7 +105,6 @@ function Signup(g) {
                 <div className="input-group mb-3">
                 <a on class="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>
                 </div>
-                    <input type="submit" onClick={handleSubmit}></input>
                 <a className="link" onClick={signInFunc}>Already have an account?</a>
             </div></form>
         </div>
