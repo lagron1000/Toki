@@ -21,23 +21,14 @@ function Messages({user, chooseChat}) {
     const elements = ch.map((m, key) => {
         if (m.me) {
             return (
-//                 <div className="chat">
-//                     <Message content={m.content} time={m.time} key={key} isMe={true} ></Message>
-                <div className="me">
+                <div className="message-blue">
                     <Message msg={m} key={key} ></Message>
                 </div>
             )
         }
         else
             return (
-//                 <div className="chat">
-//                     <Message content={m.content} time={m.time} key={key} isMe={false}></Message>
-//                 </div>
-//             )
-//     })
-//     console.log(user)
-//     debugger;
-                <div className="notMe">
+                <div className="message-orange">
                     <Message msg={m} key={key} ></Message>
                 </div>
             )
