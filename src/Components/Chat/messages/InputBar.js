@@ -41,9 +41,14 @@ function InputBar({ chat, chooseChat, changeUser }) {
 
   const currentTime = () => {
     var today = new Date();
-    var now = today.getHours() + ":" + today.getMinutes()
+    var now;
+    if (today.getMinutes()<10) {
+      now = today.getHours() + ":0" + today.getMinutes()
+    }
+    else {
+      now = today.getHours() + ":" + today.getMinutes()
+    }
     setTime(now);
-
   }
 
   const handleSubmit = () => {
@@ -134,8 +139,8 @@ function InputBar({ chat, chooseChat, changeUser }) {
       <div id="display_viזזdeo">
         {/* <video src = {file} width="320" height="240" controls></video></div> */}
         {/* audio uploading button */}
-        <audio controls hidden></audio>
-        <audio id="audioPlay" controls></audio>
+        {/* <audio controls hidden></audio>
+        <audio id="audioPlay" controls></audio> */}
       </div>
     </div>
   );

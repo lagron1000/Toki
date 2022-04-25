@@ -31,9 +31,7 @@ function Chat(user) {
     }
 
     function DisplayContact() {
-        debugger;
-
-        if (currentChat == null) return <div></div>
+        if (currentChat == null) return <div class="chat-with-s"> Glad to have you! 'Toki'-ing today?</div>
         else {
             // var find =retCon(Object.keys(currentChat)[0]).name;
             return (
@@ -60,13 +58,12 @@ function Chat(user) {
                             <div class="chat-with">
                                 <DisplayContact></DisplayContact>
                             </div>
-                            <div class="chat-num-messages"><div> {Object.keys(currentChat)[0]} </div></div>
-                        </div>
-                        <div>
-                            <DisplayMessages></DisplayMessages>
+                            {/* <div class="chat-num-messages"> {Object.keys(currentChat)[0]} </div> */}
                         </div></nav>
+                    <div>
+                        <DisplayMessages></DisplayMessages>
+                    </div>
                 </div>
-
             </div>
         </div>
     )
