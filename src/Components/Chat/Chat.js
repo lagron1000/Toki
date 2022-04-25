@@ -6,6 +6,7 @@ import InputBar from './messages/InputBar';
 import Messages from './messages/Messages';
 import { retCon } from '../../Data/ContactList';
 function Chat(user) {
+    debugger
 
     const [currentChat, chatStateSwitch] = useState(null);
 
