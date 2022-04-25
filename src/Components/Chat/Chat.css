@@ -256,6 +256,7 @@ body{
 }
 
 .message-content {
+  cursor: default;
   /* width: fit-content;
   width: -moz-fit-content; */
     padding-bottom: 10px;
@@ -263,6 +264,7 @@ body{
 }
 
 .message-timestamp-right {
+  cursor: default;
     position: absolute;
     font-size: .55em;
     font-weight: 300;
@@ -271,6 +273,7 @@ body{
 }
 
 .message-timestamp-left {
+  cursor: default;
     position: absolute;
     font-size: .55em;
     font-weight: 300;
@@ -335,23 +338,32 @@ body{
 }
 
 .chat-with {
+  cursor: default;
   display: flex;
   font-weight: bold;
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
   }
 .chat-with img {
-  
+  position: relative;
+  top:-15px;
+  right: -15px;
+  /* padding-left: 10%; */
+    /* padding-bottom: 17%; */
+    /* margin-bottom: 60%; */
     max-width: 50px;
     max-height: 50px;
-    border-radius:50%;
-    border-color: cadetblue;
+    border-radius:100%;
+    border-width: 10px;
+    border-style: ridge;
+    border: solid black;
     
     /* margin:15px; */
     /* float:left; */
 }
 
 .chat-num-messages {
+  cursor: default;
   color:rgb(73, 71, 71);
   font-size: 12px;
 }
