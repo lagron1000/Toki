@@ -11,13 +11,22 @@
   border-style: groove;
 }
 @keyframes move {
-
     0% {background-color: rgb(95, 181, 181);}
     20% {background-color: rgb(101, 160, 145);}
     40% {background-color: rgb(162, 202, 189);}
     60% {background-color: rgb(162, 202, 189);}
     80% {background-color: rgb(101, 160, 145);}
     100% {background-color: rgb(95, 181, 181);}
+
+/*     0% {background-color: rgb(166, 185, 255);}
+    10% {background-color: rgb(145, 177, 205);}
+    20% {background-color: rgb(135, 200, 222);}
+    30% {background-color: rgb(176, 246, 230);}
+    40% {background-color: rgb(136, 234, 167);}
+    50% {background-color: rgb(176, 246, 236);}
+    60% {background-color: rgb(135, 222, 212);}
+    70% {background-color: rgb(159, 233, 243);}
+    100% {background-color: rgb(134, 173, 218);} */
   }
 
 #chat {
@@ -182,7 +191,7 @@
   scrollbar-color: rebeccapurple green;
   scrollbar-width: auto;
 }
-.me {
+.notMe {
   border-top: 1px solid rgba(0, 0, 0, .05);
   padding: 10px;
   overflow: auto;
@@ -191,7 +200,7 @@
   align-content: flex-start;
   flex: 1;
 }
-.notMe {
+.me {
   background: rgba(0, 114, 135, .1);
   border: 2px solid rgba(0, 114, 135, .1);
   align-self: flex-start;
@@ -380,4 +389,16 @@ body{
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
+}
+
+.textBar {
+  display : flex;
+}
+
+
+.mediaBar {
+  display: none;
+}
+.mediaBar :hover {
+  display: flex;
 }

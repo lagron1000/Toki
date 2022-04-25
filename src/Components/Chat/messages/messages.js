@@ -19,37 +19,29 @@ function Messages({user, chooseChat}) {
     }
 
     const elements = ch.map((m, key) => {
-        console.log(m)
         if (m.me) {
             return (
-                <div className="chat">
-                    <Message content={m.content} time={m.time} key={key} isMe={true} ></Message>
+//                 <div className="chat">
+//                     <Message content={m.content} time={m.time} key={key} isMe={true} ></Message>
+                <div className="me">
+                    <Message msg={m} key={key} ></Message>
                 </div>
             )
         }
         else
             return (
-                <div className="chat">
-                    <Message content={m.content} time={m.time} key={key} isMe={false}></Message>
+//                 <div className="chat">
+//                     <Message content={m.content} time={m.time} key={key} isMe={false}></Message>
+//                 </div>
+//             )
+//     })
+//     console.log(user)
+//     debugger;
+                <div className="notMe">
+                    <Message msg={m} key={key} ></Message>
                 </div>
             )
     })
-    // function DisplayContact() {
-    //     debugger;
-    //     console.log(Object.keys(user)[0]);
-    //     return (
-    //         <div className='messages'>
-    //             {/* <div class="container"> */}
-    //             {/* <Messages ch={user.user.chatHistory}></Messages> */}
-    //             {/* {Object.keys(user)[0]} {retCon(Object.keys(user)[0])} */}
-    //             {/* <div className='iBar'>
-    //                 <InputBar chat={currentChat} chooseChat={chooseChat}></InputBar>
-    //             </div> */}</div>
-    //         // </div>
-    //     )
-    // }
-    console.log(user)
-    debugger;
     return (
         <div className="chat">
             {/* <DisplayContact></DisplayContact> */}
