@@ -14,9 +14,10 @@ function Chat(user) {
         chatStateSwitch(chat)
     }
 
-    function DisplayMessages() {debugger;
+    function DisplayMessages() {
+        debugger;
         if (currentChat == null) return <div></div>
-        
+
         else return (
             <div className='messages'>
                 {/* <div class="container"> */}
@@ -28,11 +29,9 @@ function Chat(user) {
             // </div>
         )
     }
-    
-        function DisplayContact() {
-        debugger;
-        
-        if (currentChat == null) return <div class = "chat-with-s"> Glad to have you! 'Toki'-ing today?</div>
+
+    function DisplayContact() {
+        if (currentChat == null) return <div class="chat-with-s"> Glad to have you! 'Toki'-ing today?</div>
         else {
             // var find =retCon(Object.keys(currentChat)[0]).name;
             return (
@@ -42,8 +41,8 @@ function Chat(user) {
                         <img src={retCon(Object.keys(currentChat)[0]).img} ></img>
                     </div>
                 </div>
-        )
-            }
+            )
+        }
     }
     console.log(currentChat);
     return (
@@ -53,19 +52,18 @@ function Chat(user) {
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>
                 </div>
                 <div id='chat' class="column">
-                {/* {Object.keys(currentChat)[0]} */}
-                <nav>
-                    <div class="chat-about">
-                        <div class="chat-with">
-                        <DisplayContact></DisplayContact>
+                    {/* {Object.keys(currentChat)[0]} */}
+                    <nav>
+                        <div class="chat-about">
+                            <div class="chat-with">
+                                <DisplayContact></DisplayContact>
                             </div>
-                        {/* <div class="chat-num-messages"> {Object.keys(currentChat)[0]} </div> */}
-                    </div></nav>
+                            {/* <div class="chat-num-messages"> {Object.keys(currentChat)[0]} </div> */}
+                        </div></nav>
                     <div>
-                    <DisplayMessages></DisplayMessages>
+                        <DisplayMessages></DisplayMessages>
+                    </div>
                 </div>
-                </div>
-                
             </div>
         </div>
     )
