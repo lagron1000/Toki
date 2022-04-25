@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './Chat.css';
 import Contacts from './Contacts/Contacts'
+import Contact from './Contacts/Contact'
 import InputBar from './messages/InputBar';
 import Messages from './messages/Messages';
+import { retCon } from '../../Data/ContactList';
 function Chat(user) {
     debugger
 
@@ -12,19 +14,38 @@ function Chat(user) {
         chatStateSwitch(chat)
     }
 
-    function DisplayMessages() {
+    function DisplayMessages() {debugger;
         if (currentChat == null) return <div></div>
+        
         else return (
             <div className='messages'>
+                {/* <div class="container"> */}
                 {/* <Messages ch={user.user.chatHistory}></Messages> */}
                 <Messages user={currentChat} chooseChat={chooseChat} ></Messages>
                 {/* <div className='iBar'>
                     <InputBar chat={currentChat} chooseChat={chooseChat}></InputBar>
-                </div> */}
-            </div>
+                </div> */}</div>
+            // </div>
         )
     }
-
+    
+        function DisplayContact() {
+        debugger;
+        
+        if (currentChat == null) return <div></div>
+        else {
+            // var find =retCon(Object.keys(currentChat)[0]).name;
+            return (
+                <div class="chat-about">
+                    <div class="chat-with">
+                        <div> {retCon(Object.keys(currentChat)[0]).name} </div>
+                        <img src={retCon(Object.keys(currentChat)[0]).img} ></img>
+                    </div>
+                </div>
+        )
+            }
+    }
+    console.log(currentChat);
     return (
         <div>
             <div class="row g-0 no-gutters">
@@ -32,8 +53,19 @@ function Chat(user) {
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>
                 </div>
                 <div id='chat' class="column">
+                {/* {Object.keys(currentChat)[0]} */}
+                <nav>
+                    <div class="chat-about">
+                        <div class="chat-with">
+                        <DisplayContact></DisplayContact>
+                            </div>
+                        <div class="chat-num-messages"><div> {Object.keys(currentChat)[0]} </div></div>
+                    </div>
+                    <div>
                     <DisplayMessages></DisplayMessages>
+                </div></nav>
                 </div>
+                
             </div>
         </div>
     )
