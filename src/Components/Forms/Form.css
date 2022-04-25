@@ -8,6 +8,11 @@
     border-radius: 5px;
 
   }
+  .valErr {
+    color: brown;
+    font-size: small;
+    margin-top: 5px;
+  }
 
   .FormContainer {
       padding-top: 1.5%;
