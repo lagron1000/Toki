@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import contactList from '../../Data/ContactList';
 import './Form.css';
 import * as helpers from './helpers';
-
 function Signup(g) {
 
     var signInFunc = g["g"];
@@ -35,7 +34,6 @@ function Signup(g) {
     const [isSubmitted, setIsSubmit] = useState(false);
 
     const handleChange = (event) => {
-        debugger
         if (event.code === "Enter" || event.code === "NumpadEnter") {
             handleSubmit();
         }
@@ -48,7 +46,6 @@ function Signup(g) {
     }
 
     const handleImg = (e) => {
-        debugger
         var link = URL.createObjectURL(e.target.files[0])
         const {name, value} = e.target;
         formVals.img=link;
@@ -57,23 +54,22 @@ function Signup(g) {
     }
     
     const handleSubmit = (e) => {
+        console.log(contactList);
+        
+        helpers.register(
+            formVals["fullName"],
+            formVals["user"],
+            formVals["pword"],
+            formVals["pword2"],
+            formVals["img"]
+        )
         e.preventDefault();
-        setFormErrors(helpers.isValid(formVals));
+        const formErrors = helpers.isValid(formVals);
+        setFormErrors({...formErrors, formErrors});
         setIsSubmit(true);
-
-        //   helpers.register(
-        //     formVals["fullName"],
-        //     formVals["user"],
-        //     formVals["pword"],
-        //     formVals["img"]
-        // )
-        // console.log(contactList);
-        // debugger;
-        // // event.preventDefault;
-        // // if (checkIfValid()) {
-        // //     debugger;
-        //    signInFunc() 
-        // }
+        if(Object.keys(formErrors).length===0) {
+            signInFunc();
+        }
     }
 
     useEffect(() => {
