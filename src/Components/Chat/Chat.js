@@ -4,6 +4,7 @@ import Contacts from './Contacts/Contacts'
 import InputBar from './messages/InputBar';
 import Messages from './messages/Messages';
 function Chat(user) {
+    debugger
 
     const [currentChat, chatStateSwitch] = useState(null);
 
@@ -26,7 +27,6 @@ function Chat(user) {
 
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
             <div class="row g-0 no-gutters">
                 <div id='contacts' class="column">
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>

@@ -19,23 +19,20 @@ function Messages({user, chooseChat}) {
     }
 
     const elements = ch.map((m, key) => {
-        console.log(m)
         if (m.me) {
             return (
                 <div className="me">
-                    <Message content={m.content} time={m.time} key={key} ></Message>
+                    <Message msg={m} key={key} ></Message>
                 </div>
             )
         }
         else
             return (
                 <div className="notMe">
-                    <Message content={m.content} time={m.time} key={key} ></Message>
+                    <Message msg={m} key={key} ></Message>
                 </div>
             )
     })
-
-    console.log(user)
     return (
         <div className="chat">
             <div className="messageList">

@@ -4,7 +4,7 @@ function FileButtons({id, accepts, link1, link2, chooseFileType}) {
     function handleChangeInFile(e) {
         debugger
       console.log(e.target.files);
-      chooseFileType(URL.createObjectURL(e.target.files[0]));
+      chooseFileType(e.target.files[0]);
     }
     return(
         <div>
