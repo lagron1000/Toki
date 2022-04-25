@@ -34,10 +34,25 @@ function Messages({user, chooseChat}) {
                 </div>
             )
     })
-
+    // function DisplayContact() {
+    //     debugger;
+    //     console.log(Object.keys(user)[0]);
+    //     return (
+    //         <div className='messages'>
+    //             {/* <div class="container"> */}
+    //             {/* <Messages ch={user.user.chatHistory}></Messages> */}
+    //             {/* {Object.keys(user)[0]} {retCon(Object.keys(user)[0])} */}
+    //             {/* <div className='iBar'>
+    //                 <InputBar chat={currentChat} chooseChat={chooseChat}></InputBar>
+    //             </div> */}</div>
+    //         // </div>
+    //     )
+    // }
     console.log(user)
+    debugger;
     return (
         <div className="chat">
+            {/* <DisplayContact></DisplayContact> */}
             <div className="messageList">
             <div class="scroller">
                 {elements}
