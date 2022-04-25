@@ -15,18 +15,27 @@ function TextButton({chat, chooseChat, changeUser, handleChange, handleSubmit}) 
   
     const [formVals, setFormVals] = useState(msgTemplate)
 
-    // const handleChange = (event) => {
-    //   if (event.code === "Enter" || event.code === "NumpadEnter") {
-    //     event.preventDefault();
-    //     handleSubmit();
-    //   }
-    //   else {
-    //     msgTemplate.content = event.target.value;
-    //     var today = new Date();
-    //     msgTemplate.time = today.getHours() + ":" + today.getMinutes()
-    //     setFormVals(msgTemplate);
-    //   }
-    // }
+
+//     const handleChange = (event) => {
+//       if (event.code === "Enter" || event.code === "NumpadEnter") {
+//         event.preventDefault();
+//         handleSubmit();
+//       }
+//       else {
+//         msgTemplate.content = event.target.value;
+//         var today = new Date();
+//         debugger;
+//         if (today.getMinutes()<10) {
+//           msgTemplate.time = today.getHours() + ":0" + today.getMinutes()
+//         }
+//         else {
+//           msgTemplate.time = today.getHours() + ":" + today.getMinutes()
+//         }
+        
+//         setFormVals(msgTemplate);
+//       }
+//     }
+
   
     // const handleSubmit = () => {
     //   messages.push(formVals)
@@ -48,4 +57,5 @@ function TextButton({chat, chooseChat, changeUser, handleChange, handleSubmit}) 
       </form>
     );
 }
+//maxLength = "10"
 export default TextButton;
