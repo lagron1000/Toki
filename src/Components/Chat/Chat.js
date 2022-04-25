@@ -14,9 +14,10 @@ function Chat(user) {
         chatStateSwitch(chat)
     }
 
-    function DisplayMessages() {debugger;
+    function DisplayMessages() {
+        debugger;
         if (currentChat == null) return <div></div>
-        
+
         else return (
             <div className='messages'>
                 {/* <div class="container"> */}
@@ -28,10 +29,10 @@ function Chat(user) {
             // </div>
         )
     }
-    
-        function DisplayContact() {
+
+    function DisplayContact() {
         debugger;
-        
+
         if (currentChat == null) return <div></div>
         else {
             // var find =retCon(Object.keys(currentChat)[0]).name;
@@ -42,8 +43,8 @@ function Chat(user) {
                         <img src={retCon(Object.keys(currentChat)[0]).img} ></img>
                     </div>
                 </div>
-        )
-            }
+            )
+        }
     }
     console.log(currentChat);
     return (
@@ -53,19 +54,19 @@ function Chat(user) {
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>
                 </div>
                 <div id='chat' class="column">
-                {/* {Object.keys(currentChat)[0]} */}
-                <nav>
-                    <div class="chat-about">
-                        <div class="chat-with">
-                        <DisplayContact></DisplayContact>
+                    {/* {Object.keys(currentChat)[0]} */}
+                    <nav>
+                        <div class="chat-about">
+                            <div class="chat-with">
+                                <DisplayContact></DisplayContact>
                             </div>
-                        <div class="chat-num-messages"><div> {Object.keys(currentChat)[0]} </div></div>
-                    </div>
-                    <div>
-                    <DisplayMessages></DisplayMessages>
-                </div></nav>
+                            <div class="chat-num-messages"><div> {Object.keys(currentChat)[0]} </div></div>
+                        </div>
+                        <div>
+                            <DisplayMessages></DisplayMessages>
+                        </div></nav>
                 </div>
-                
+
             </div>
         </div>
     )
