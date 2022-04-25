@@ -212,7 +212,7 @@ body{
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400); */
 
 .container {
     width: fit-content;
@@ -223,7 +223,7 @@ body{
   word-break: break-word;
     width: fit-content;
     width: -moz-fit-content;
-    height: fit-content;
+    height: min-content;
     position: relative;
     margin-left: 20px;
     margin-right: 50%;
@@ -264,7 +264,7 @@ body{
 
 .message-timestamp-right {
     position: absolute;
-    font-size: .85em;
+    font-size: .55em;
     font-weight: 300;
     bottom: 5px;
     right: 5px;
@@ -272,7 +272,7 @@ body{
 
 .message-timestamp-left {
     position: absolute;
-    font-size: .85em;
+    font-size: .55em;
     font-weight: 300;
     bottom: 5px;
     left: 5px;

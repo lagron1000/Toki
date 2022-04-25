@@ -3,9 +3,7 @@ import { useState } from "react";
 import InputBar from './InputBar';
 // bootstrap flex
 function Message({ content, time, isMe }) {
-    debugger;
     if(isMe) {
-        debugger;
        return (
             <div class="chat">
                  <div class="message-blue">
