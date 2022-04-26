@@ -3,7 +3,7 @@ import { retCon } from "../../../Data/ContactList";
 import InputBar from "./InputBar";
 import Message from "./Message";
 
-function Messages({user, chooseChat}) {
+function Messages({ user, chooseChat }) {
 
     var msgTemplate = { content: "", time: "", me: true };
     var friendName = Object.keys(user)[0];
@@ -13,7 +13,7 @@ function Messages({user, chooseChat}) {
 
     const [currentUser, setNewUser] = useState(false);
 
-    
+
     const changeUser = () => {
         setNewUser(!currentUser);
     }
@@ -37,12 +37,13 @@ function Messages({user, chooseChat}) {
         <div className="chat">
             {/* <DisplayContact></DisplayContact> */}
             <div className="messageList">
-            <div class="scroller">
-                {elements}
+                <div class="scroller">
+                    {elements}
+                    <div className='iBar'>
+                        <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
+                    </div>
                 </div>
-                <div className='iBar'>
-                    <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
-                </div>
+
             </div>
         </div>
     )
