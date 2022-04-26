@@ -2,7 +2,6 @@ import { useState } from "react";
 function FileButtons({id, accepts, link1, link2, chooseFileType}) {
     //video + picture input
     function handleChangeInFile(e) {
-        debugger
       console.log(e.target.files);
       chooseFileType(e.target.files[0]);
     }
