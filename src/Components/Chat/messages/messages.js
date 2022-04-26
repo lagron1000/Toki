@@ -37,7 +37,7 @@ function Messages({ user, chooseChat }) {
         <div className="chat">
             {/* <DisplayContact></DisplayContact> */}
             <div className="messageList">
-                <div class="scroller">
+                <div class="scroller overflow-auto">
                     {elements}
                     <div className='iBar'>
                         <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
