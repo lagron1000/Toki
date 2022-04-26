@@ -36,7 +36,9 @@ const contactList = [
     {id : '3', name : 'Limor Halfon', img : './images/guy.png', user : 'limfon', pword : '1234', chatHistory : defaultCH},
     {id : '4', name : 'Liron Admon', img : './images/guy.png', user : 'lirmon', pword : '1234', chatHistory : defaultCH},
     {id : '5', name : 'Namir Brot', img : './images/lady.png', user : 'naroto', pword : '1234', chatHistory : defaultCH},
-    {id : '5', name : 'Lihor', img : './images/lady.png', user : 'l', pword : 'l', chatHistory : defaultCH}
+    {id : '6', name : 'Lihor', img : './images/lady.png', user : 'l', pword : 'l', chatHistory : defaultCH},
+    {id : '7', name : 'Nor', img : './images/TokiLogo.png', user : 'nor', pword : '1', chatHistory : []}
+
 ];
 
 export function retCon(name) {
