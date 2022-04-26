@@ -3,7 +3,6 @@ import { useState } from "react";
 import InputBar from './InputBar';
 
 function Message(msg) {
-    debugger
 
     msg = msg["msg"];
     // console.log(msg.file.type);

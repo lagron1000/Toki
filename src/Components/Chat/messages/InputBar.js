@@ -76,7 +76,7 @@ function InputBar({ chat, chooseChat, changeUser }) {
   //video + picture input
 
   const chooseFileType = (neededFileType) => {
-    debugger
+    
     currentTime()
     setFile(neededFileType);
   }

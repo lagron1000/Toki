@@ -5,8 +5,8 @@ import Contact from './Contacts/Contact'
 import InputBar from './messages/InputBar';
 import Messages from './messages/Messages';
 import { retCon } from '../../Data/ContactList';
+import UserBar from './Contacts/UserBar';
 function Chat(user) {
-    debugger
 
     const [currentChat, chatStateSwitch] = useState(null);
 
@@ -15,7 +15,6 @@ function Chat(user) {
     }
 
     function DisplayMessages() {
-        debugger;
         if (currentChat == null) return <div></div>
 
         else return (
@@ -46,9 +45,10 @@ function Chat(user) {
     }
     console.log(currentChat);
     return (
-        <div>
+        <div className='chatWin'>
             <div class="row g-0 no-gutters">
                 <div id='contacts' class="column">
+                    <UserBar></UserBar>
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>
                 </div>
                 <div id='chat' class="column">
@@ -59,7 +59,8 @@ function Chat(user) {
                                 <DisplayContact></DisplayContact>
                             </div>
                             {/* <div class="chat-num-messages"> {Object.keys(currentChat)[0]} </div> */}
-                        </div></nav>
+                        </div>
+                    </nav>
                     <div>
                         <DisplayMessages></DisplayMessages>
                     </div>

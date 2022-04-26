@@ -34,11 +34,12 @@ function Env() {
 
     return (
         <div className="Main">
-            <BrowserRouter>
+            <Startup></Startup>
+            {/* <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Startup />} />
                 </Routes>
-            </BrowserRouter>
+            </BrowserRouter> */}
         </div>
     )
 }
