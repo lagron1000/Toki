@@ -48,7 +48,7 @@ function Chat(user) {
         <div className='chatWin'>
             <div class="row g-0 no-gutters">
                 <div id='contacts' class="column">
-                    <UserBar></UserBar>
+                    <UserBar user={user} chooseChat={chooseChat}></UserBar>
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>
                 </div>
                 <div id='chat' class="column">

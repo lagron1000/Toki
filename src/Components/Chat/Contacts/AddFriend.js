@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { retCon } from '../../../Data/ContactList';
 import './AddFriend.css';
 
 function AddFriend(props) {
@@ -9,12 +10,23 @@ function AddFriend(props) {
         if (e.code === "Enter" || e.code === "NumpadEnter") {
             e.preventDefault();
             search();
-            console.log(searchVar)
           }
     }
 
     function search() {
-
+        var friend = retCon(searchVar);
+        if(!friend) {
+            alert("User not found")
+        }
+        else {
+            debugger
+            var newChat = {}
+            newChat[searchVar] = [];
+            props.user.user.chatHistory.push(newChat);
+            props.setShowPopup(false);
+            var len = props.user.user.chatHistory.length;
+            props.chooseChat(props.user.user.chatHistory[len-1]);
+        }
     }
 
 
