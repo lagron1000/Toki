@@ -26,10 +26,12 @@ function Message(msg) {
                 </div>
             )
         }
-        else if (msg.file.type.startsWith("audio/")) {
+        else {
             return (
                 <div>
-                    <audio src={file} controls></audio>
+                    <audio controls preload="auto">
+                        <source src={file}></source>
+                    </audio>
                     <div class="message-content">{msg.content}</div>
                     <div class="message-timestamp-left">{msg.time}</div>
                 </div>
