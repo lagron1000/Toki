@@ -1,4 +1,3 @@
-import './Message.css';
 import { useState } from "react";
 import InputBar from './InputBar';
 
