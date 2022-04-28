@@ -41,9 +41,10 @@ function Messages({ user, chooseChat }) {
                     {elements}
 
                 </div>
+                <div class = "nav justify-content-center">
                 <div className='iBar'>
                     <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
-                </div>
+                </div></div>
             </div>
 
         </div>
