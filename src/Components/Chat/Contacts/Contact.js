@@ -10,7 +10,7 @@ function Contact({ friend, img, lastMsg, meObj }) {
 
 
     return (
-        <div className="card table-hover">
+        <div className="card table-hover contact">
             <p class="card-header mb-3" >{friend.name}</p>
             <div className="content">
                 <img className="pfp mb-3" src={img}></img>

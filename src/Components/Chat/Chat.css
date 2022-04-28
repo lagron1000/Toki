@@ -11,6 +11,10 @@
   border-style: groove;
 }
 
+#btnStopRec {
+  background-color: #f56a6a;
+}
+
 @keyframes move {
   0% {
     background-color: rgb(95, 181, 181);
@@ -53,7 +57,7 @@
   /* width: 25%; */
   flex: 6;
   animation: move 45s infinite;
-  height: 500px;
+  height: 445px;
 
 
 }
@@ -167,8 +171,8 @@ nav ul li ul li a:hover {
 }
 
 #contacts>:hover {
-  background-color: rgb(62, 61, 61);
-  cursor: pointer;
+  /* background-color: rgb(62, 61, 61); */
+  /* cursor: pointer; */
   border-spacing: 10px;
 }
 
@@ -194,7 +198,10 @@ nav ul li ul li a:hover {
 .pfp {
   width: 30%;
   border-radius: 100%;
+  align-self: center;
+
 }
+
 
 .card:hover {
   background-color: rgb(221, 235, 248);
@@ -210,9 +217,9 @@ nav ul li ul li a:hover {
   /* margin-top: 60%; */
   width: -moz-fit-content;
   width: fit-content;
-  bottom: 0;
+  /* bottom: 0;
   padding-bottom: 24px;
-  position: absolute;
+  position: absolute; */
 }
 
 .content {
@@ -261,7 +268,7 @@ body {
   border-radius: .55rem;
   position: relative;
   width: 100%;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 3px 2px 0 rgb(0 0 0 / 10%);
 }
 
 /* @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400); */
@@ -271,6 +278,9 @@ body {
   padding: 10px;
 }
 
+.contact {
+  cursor: pointer;
+}
 .message-blue {
   word-break: break-word;
   width: fit-content;
@@ -444,6 +454,20 @@ body {
 
 .textBar {
   display: flex;
+  background-color: azure;
+
+}
+
+#textInput {
+  flex : 6;
+}
+
+.mediaInput {
+  flex : 1;
+}
+
+#submitInput { 
+  flex : 2;
 }
 
 

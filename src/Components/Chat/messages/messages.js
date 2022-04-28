@@ -39,12 +39,13 @@ function Messages({ user, chooseChat }) {
             <div className="messageList">
                 <div class="scroller overflow-auto">
                     {elements}
-                    <div className='iBar'>
-                        <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
-                    </div>
-                </div>
 
+                </div>
+                <div className='iBar'>
+                    <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
+                </div>
             </div>
+
         </div>
     )
 }
