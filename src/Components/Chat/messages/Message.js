@@ -2,32 +2,31 @@ import { useState } from "react";
 import InputBar from './InputBar';
 
 function Message(msg) {
-
     msg = msg["msg"];
     if (msg.file != null) {
-        var file = URL.createObjectURL(msg.file);
-        if (msg.file.type.startsWith("image/")) {
+        var file = msg.file
+        if (msg.fileType.startsWith("img")) {
             return (
                 <div>
-                    <img src={file}></img>
+                    <img className='media' src={file}></img>
                     <div class="message-content">{msg.content}</div>
                     <div class="message-timestamp-left">{msg.time}</div>
                 </div>
             )
         }
-        else if (msg.file.type.startsWith("video/")) {
+        else if (msg.fileType.startsWith("vid")) {
             return (
                 <div>
-                    <video src={file} controls></video>
+                    <video className='media' src={file} controls></video>
                     <div class="message-content">{msg.content}</div>
                     <div class="message-timestamp-left">{msg.time}</div>
                 </div>
             )
         }
-        else {
+        else if (msg.fileType.startsWith("audio")){
             return (
                 <div>
-                    <audio controls preload="auto">
+                    <audio className='media' controls preload="auto">
                         <source src={file}></source>
                     </audio>
                     <div class="message-content">{msg.content}</div>

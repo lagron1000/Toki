@@ -21,14 +21,14 @@ function Messages({ user, chooseChat }) {
     const elements = ch.map((m, key) => {
         if (m.me) {
             return (
-                <div className="message-blue">
+                <div className="message-blue msg">
                     <Message msg={m} key={key} ></Message>
                 </div>
             )
         }
         else
             return (
-                <div className="message-orange">
+                <div className="message-orange msg">
                     <Message msg={m} key={key} ></Message>
                 </div>
             )

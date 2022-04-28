@@ -15,6 +15,16 @@
   background-color: #f56a6a;
 }
 
+.msg {
+  max-width: 50%;
+  left: -3%;
+
+}
+
+.media {
+  max-width: 100%;
+}
+
 @keyframes move {
   0% {
     background-color: rgb(95, 181, 181);
