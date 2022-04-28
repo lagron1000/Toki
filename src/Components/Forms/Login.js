@@ -49,6 +49,9 @@ function Login({f, g}) {
             setFormErrors(helpers.isExist("user"));
             setIsSubmit(true);
         }
+        if(formVals.pass==="" || formVals.user === "") {
+            setFormErrors(helpers.isEmpty(formVals));
+        }
     }
     useEffect(() => {
         console.log(formErrors);

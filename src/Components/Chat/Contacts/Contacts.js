@@ -3,9 +3,6 @@ import cList from '../../../Data/Contacts.json';
 import Contact from "./Contact";
 
 function Contacts({ user, chooseChat }) {
-    // function sumbitChat() {
-    //     chooseChat(friend)
-    // }
 
     var myCons = user.user.chatHistory;
 

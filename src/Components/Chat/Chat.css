@@ -49,16 +49,6 @@
   100% {
     background-color: rgb(95, 181, 181);
   }
-
-  /*     0% {background-color: rgb(166, 185, 255);}
-    10% {background-color: rgb(145, 177, 205);}
-    20% {background-color: rgb(135, 200, 222);}
-    30% {background-color: rgb(176, 246, 230);}
-    40% {background-color: rgb(136, 234, 167);}
-    50% {background-color: rgb(176, 246, 236);}
-    60% {background-color: rgb(135, 222, 212);}
-    70% {background-color: rgb(159, 233, 243);}
-    100% {background-color: rgb(134, 173, 218);} */
 }
 
 #chat {
@@ -69,13 +59,22 @@
   animation: move 45s infinite;
   height: 445px;
 
+}
 
+#chat img {
+
+  width: 320px;
+  height: 240px;
+}
+
+#chat video {
+
+  width: 320px;
+  height: 240px;
 }
 
 #buttons {
   float: inline-end;
-  /* position: absolute; */
-  /* position:relative; */
 }
 
 #input {
@@ -163,26 +162,12 @@ nav ul li ul li a:hover {
   background-size: cover;
 }
 
-/* #display_video {
-    max-width: 100%;
-    height: auto;
-    background-clip: border-box;
-    display: flex;
-    background-size: auto;
-    border: 1px solid black;
-    background-position: center;
-    background-size: cover;
-  } */
-
-
 #contact {
   border-style: dashed;
   padding-left: 200px;
 }
 
 #contacts>:hover {
-  /* background-color: rgb(62, 61, 61); */
-  /* cursor: pointer; */
   border-spacing: 10px;
 }
 
@@ -196,15 +181,10 @@ nav ul li ul li a:hover {
   ;
   padding-left: 20px;
   flex: 2;
-  overflow-y: scroll;
-  height: 500px;
-  /* width: 75%; */
+  overflow-y: auto;
+  height: 450px;
 }
 
-/* .sideBar {
-  overflow-y: scroll;
-  height: 400px;
-} */
 .pfp {
   width: 30%;
   border-radius: 100%;
@@ -223,13 +203,10 @@ nav ul li ul li a:hover {
 }
 
 .iBar {
-  /* background-color: blueviolet; */
-  /* margin-top: 60%; */
   width: -moz-fit-content;
   width: fit-content;
-  /* bottom: 0;
-  padding-bottom: 24px;
-  position: absolute; */
+  border: 7px solid rgb(153, 215, 183);
+  margin-top: 20px;
 }
 
 .content {
@@ -241,8 +218,8 @@ nav ul li ul li a:hover {
 }
 
 .scroller {
-  width: 600px;
-  height: 400px;
+  width: 500px;
+  height: 270px;
   overflow-y: scroll;
   scrollbar-color: rebeccapurple green;
   scrollbar-width: auto;
@@ -267,7 +244,6 @@ nav ul li ul li a:hover {
 
 body {
   background-color: #f4f7f6;
-  /* margin-top:20px; */
 }
 
 .card {
@@ -280,8 +256,6 @@ body {
   width: 100%;
   box-shadow: 0 3px 2px 0 rgb(0 0 0 / 10%);
 }
-
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400); */
 
 .container {
   width: fit-content;
@@ -302,7 +276,6 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   background-color: #A8DDFD;
-  /* height: 50px; */
   text-align: left;
   font: 400 .9em 'Open Sans', sans-serif;
   border: 1px solid #97C6E3;
@@ -317,10 +290,8 @@ body {
   position: relative;
   margin-bottom: 10px;
   margin-left: 70%;
-  /* left: 70%; */
   padding: 10px;
   background-color: #f8e896;
-  /* height: 50px; */
   text-align: left;
   font: 400 .9em 'Open Sans', sans-serif;
   border: 1px solid #dfd087;
@@ -329,8 +300,6 @@ body {
 
 .message-content {
   cursor: default;
-  /* width: fit-content;
-  width: -moz-fit-content; */
   padding-bottom: 10px;
   margin: 0;
 }
@@ -421,18 +390,12 @@ body {
   position: relative;
   top: -15px;
   right: -15px;
-  /* padding-left: 10%; */
-  /* padding-bottom: 17%; */
-  /* margin-bottom: 60%; */
   max-width: 50px;
   max-height: 50px;
   border-radius: 100%;
   border-width: 10px;
   border-style: ridge;
   border: solid black;
-
-  /* margin:15px; */
-  /* float:left; */
 }
 
 .chat-num-messages {
@@ -441,30 +404,9 @@ body {
   font-size: 12px;
 }
 
-#overlay {
-  position: fixed;
-  /* Sit on top of the page content */
-  display: none;
-  /* Hidden by default */
-  width: 100%;
-  /* Full width (cover the whole page) */
-  height: 100%;
-  /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Black background with opacity */
-  z-index: 2;
-  /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer;
-  /* Add a pointer on hover */
-}
-
 .textBar {
   display: flex;
-  background-color: azure;
+  /* background-color: azure; */
 
 }
 

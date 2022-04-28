@@ -1,10 +1,8 @@
-import './Message.css';
 import { useState } from "react";
 import InputBar from './InputBar';
 
 function Message(msg) {
     msg = msg["msg"];
-    // console.log(msg.file.type);
     if (msg.file != null) {
         var file = msg.file
         if (msg.fileType.startsWith("img")) {
