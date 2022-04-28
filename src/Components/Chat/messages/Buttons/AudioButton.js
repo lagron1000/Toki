@@ -7,6 +7,7 @@ function AudioButton(chooseFileType) {
   useEffect(() => {
     let startRec = document.getElementById("btnStartRec");
     let stopRec = document.getElementById("btnStopRec");
+    let submitBtn = document.getElementById("submitInput");
     let audioIN = { audio: true };
 
     stopRec.style.display = "none"
@@ -17,6 +18,7 @@ function AudioButton(chooseFileType) {
         startRec.addEventListener("click", (ev) => {
           startRec.style.display = "none"
           stopRec.style.display = "block"
+          submitBtn.disabled = true;
           mediaRecorder.start();
         })
         const audioChunks = [];
@@ -29,6 +31,8 @@ function AudioButton(chooseFileType) {
         stopRec.addEventListener("click", function (ev) {
           stopRec.style.display = "none"
           startRec.style.display = "block"
+          submitBtn.disabled = false;
+
           mediaRecorder.stop();
         })
       });
