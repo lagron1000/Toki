@@ -111,7 +111,7 @@ function InputBar({ chat, chooseChat, changeUser }) {
           chooseFileType={chooseFileType}
         ></FileButtons></a>
 
-        <a id="submitInput" on className="btn btn-secondary sub" type="submit" onClick={() => { currentTime(); handleSubmit(); }} >Send</a>
+        <button id="submitInput" on className="btn btn-secondary sub" type="submit" onClick={() => { currentTime(); handleSubmit(); }} >Send</button>
 
       </div>
     </div>
