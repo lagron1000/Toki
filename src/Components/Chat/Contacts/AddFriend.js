@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { retCon } from '../../../Data/ContactList';
 import './AddFriend.css';
 
 function AddFriend(props) {
@@ -9,12 +10,36 @@ function AddFriend(props) {
         if (e.code === "Enter" || e.code === "NumpadEnter") {
             e.preventDefault();
             search();
-            console.log(searchVar)
-          }
+        }
+    }
+
+    function foundCon(newC) {
+        var found = null
+        found = props.user.user.chatHistory.find((c) => {
+            if (Object.keys(c)[0] == newC) return c;
+        })
+        return found;
     }
 
     function search() {
-
+        var friend = retCon(searchVar);
+        if (!friend) {
+            alert("User not found")
+        }
+        else {
+            var didFind = foundCon(searchVar)
+            if (didFind == null) {
+                var newChat = {}
+                newChat[searchVar] = [];
+                props.user.user.chatHistory.push(newChat);
+                props.setShowPopup(false);
+                var len = props.user.user.chatHistory.length;
+                props.chooseChat(props.user.user.chatHistory[len - 1]);
+            } else {
+                props.setShowPopup(false);
+                props.chooseChat(didFind);
+            }
+        }
     }
 
 
@@ -22,10 +47,10 @@ function AddFriend(props) {
         <div className='popup'>
             <div className='popup-inner'>
                 <label>Enter Username</label>
-                <input value={searchVar} type={"text"} onChange={(e)=>{setSearchVer(e.target.value)}} onKeyDown={handleKey}></input>
+                <input value={searchVar} type={"text"} onChange={(e) => { setSearchVer(e.target.value) }} onKeyDown={handleKey}></input>
                 <button onClick={search}>Add</button>
                 <br></br>
-                <button onClick={()=>{props.setShowPopup(false)}}>Cancel</button>
+                <button onClick={() => { props.setShowPopup(false) }}>Cancel</button>
             </div>
         </div>
     ) : "";

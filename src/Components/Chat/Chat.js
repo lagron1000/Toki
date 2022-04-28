@@ -32,12 +32,12 @@ function Chat(user) {
     function DisplayContact() {
         if (currentChat == null) return <div class="chat-with-s"> Glad to have you! 'Toki'-ing today?</div>
         else {
-            // var find =retCon(Object.keys(currentChat)[0]).name;
+            var find =retCon(Object.keys(currentChat)[0]);
             return (
                 <div class="chat-about">
                     <div class="chat-with">
-                        <div> {retCon(Object.keys(currentChat)[0]).name} </div>
-                        <img src={retCon(Object.keys(currentChat)[0]).img} ></img>
+                        <div> {find.name} ({find.user}) </div>
+                        <img src={find.img} ></img>
                     </div>
                 </div>
             )
@@ -48,7 +48,7 @@ function Chat(user) {
         <div className='chatWin'>
             <div class="row g-0 no-gutters">
                 <div id='contacts' class="column">
-                    <UserBar></UserBar>
+                    <UserBar user={user} chooseChat={chooseChat}></UserBar>
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>
                 </div>
                 <div id='chat' class="column">

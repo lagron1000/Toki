@@ -24,7 +24,7 @@ function Contacts({ user, chooseChat }) {
 
 
     return (
-        <div className="sideBar">
+        <div className="sideBar overflow-auto">
 
             <div className="contactList">
                 {elements}
