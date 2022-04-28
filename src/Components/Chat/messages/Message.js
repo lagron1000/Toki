@@ -20,7 +20,18 @@ function Message(msg) {
         else if (msg.file.type.startsWith("video/")) {
             return (
                 <div>
-                    <video src={file}></video>
+                    <video src={file} controls></video>
+                    <div class="message-content">{msg.content}</div>
+                    <div class="message-timestamp-left">{msg.time}</div>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div>
+                    <audio controls preload="auto">
+                        <source src={file}></source>
+                    </audio>
                     <div class="message-content">{msg.content}</div>
                     <div class="message-timestamp-left">{msg.time}</div>
                 </div>
