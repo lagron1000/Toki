@@ -23,7 +23,7 @@ function AudioButton(chooseFileType) {
         mediaRecorder.addEventListener("dataavailable", event => {
           startRec.style.backgroundColor = "#56ca7d"
           audioChunks.push(event.data);
-          const audioBlob = new Blob(audioChunks);
+          const audioBlob = new Blob(audioChunks, {type : 'audio'});
           chooseFileTypeFunc(audioBlob);
         });
         stopRec.addEventListener("click", function (ev) {

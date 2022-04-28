@@ -22,6 +22,7 @@ function InputBar({ chat, chooseChat, changeUser }) {
   const msgTemplate = {
     content: "",
     file: null,
+    fileType : "",
     time: "",
     me: true
   }
@@ -29,6 +30,7 @@ function InputBar({ chat, chooseChat, changeUser }) {
   const [formVals, setFormVals] = useState(msgTemplate);
   const [msgContent, setContent] = useState("");
   const [msgFile, setFile] = useState(null);
+  const [msgFT, setFT] = useState("");
   const [msgTime, setTime] = useState("");
 
   const handleChange = (event) => {
@@ -57,6 +59,7 @@ function InputBar({ chat, chooseChat, changeUser }) {
     var newCH = {
       content: msgContent,
       file: msgFile,
+      fileType: msgFT,
       time: msgTime,
       me: true
     }
@@ -78,10 +81,18 @@ function InputBar({ chat, chooseChat, changeUser }) {
 
   //video + picture input
 
-  const chooseFileType = (neededFileType) => {
-
+  const chooseFileType = (file) => {
+    if (file.type.startsWith("image/")) {
+      setFT("img")
+    }
+    else if (file.type.startsWith("video/")) {
+      setFT("vid")
+    }
+    else if (file.type.startsWith("audio")) {
+      setFT("audio")
+    }
     currentTime()
-    setFile(neededFileType);
+    setFile(file);
   }
 
 

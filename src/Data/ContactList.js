@@ -1,13 +1,20 @@
 var defaultCH = [
     {
         'linmon' : [
-            {content : "hi", time : "10:20", me : true}
+            {content : "ah kapara", time : "10:20", me: false},
+            {content : "ma omer", time : "10:21", me: true}
         ]
     },
     {
         'nobort' : [
-            {content : "allo", time : "10:20", me: false},
-            {content : "ello", time : "10:21", me: true},
+            {content : "klot ze pipi", file :'./images/tiktok.mp4', fileType : "vid", time : "10:20", me: false},
+        ]
+    },
+    {
+        'l' :[
+            {content : "", file :'./images/Ievan Polkka.mp3', fileType : "audio", time : "10:20", me: false},
+            {content : "shir yefe saba", time : "10:21", me: true},
+
         ]
     },
     {
@@ -17,15 +24,10 @@ var defaultCH = [
         ]
     },
     {
-        'l' :[
-            {content : "ah kapara", time : "10:20", me: false},
-            {content : "ma omer", time : "10:21", me: true},
-        ]
-    },
-    {
         'naroto' :[
-            {content : "shabat shalom", time : "10:20", me: false},
+            {content : "", file :'./images/ss.jpg', fileType : "img", time : "10:20", me: false},
             {content : "shabat shaloms", time : "10:21", me: true},
+            
         ]
     }
 ]
