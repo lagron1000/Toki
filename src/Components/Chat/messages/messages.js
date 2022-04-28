@@ -35,15 +35,15 @@ function Messages({ user, chooseChat }) {
     })
     return (
         <div className="chat">
-            {/* <DisplayContact></DisplayContact> */}
             <div className="messageList">
                 <div class="scroller overflow-auto">
                     {elements}
 
                 </div>
+                <div class = "nav justify-content-center">
                 <div className='iBar'>
                     <InputBar chat={user} chooseChat={chooseChat} changeUser={changeUser}></InputBar>
-                </div>
+                </div></div>
             </div>
 
         </div>

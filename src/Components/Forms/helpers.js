@@ -36,9 +36,16 @@ export function register(name, user, pass, img) {
     }
     contactList.push(con);
 }
-// export function passwordLength(pass) {
-
-// }
+export function isEmpty(values) {
+    const errors = {};
+    if(!values.user) {
+        errors.user = "User is required!"
+    }
+    if(!values.pass) {
+        errors.pass = "Password is required!"
+    }
+    return errors;
+}
 export function isExist(values) {
     const errors = {};
     if (values === "user") {

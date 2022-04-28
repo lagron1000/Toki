@@ -19,13 +19,8 @@ function Chat(user) {
 
         else return (
             <div className='messages'>
-                {/* <div class="container"> */}
-                {/* <Messages ch={user.user.chatHistory}></Messages> */}
                 <Messages user={currentChat} chooseChat={chooseChat} ></Messages>
-                {/* <div className='iBar'>
-                    <InputBar chat={currentChat} chooseChat={chooseChat}></InputBar>
-                </div> */}</div>
-            // </div>
+            </div>
         )
     }
 
@@ -52,13 +47,11 @@ function Chat(user) {
                     <Contacts user={user} chooseChat={chooseChat}></Contacts>
                 </div>
                 <div id='chat' class="column">
-                    {/* {Object.keys(currentChat)[0]} */}
                     <nav>
                         <div class="chat-about">
                             <div class="chat-with">
                                 <DisplayContact></DisplayContact>
                             </div>
-                            {/* <div class="chat-num-messages"> {Object.keys(currentChat)[0]} </div> */}
                         </div>
                     </nav>
                     <div>
