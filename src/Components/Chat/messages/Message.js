@@ -5,7 +5,6 @@ import InputBar from './InputBar';
 function Message(msg) {
 
     msg = msg["msg"];
-    // console.log(msg.file.type);
     if (msg.file != null) {
         var file = URL.createObjectURL(msg.file);
         if (msg.file.type.startsWith("image/")) {

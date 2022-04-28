@@ -36,9 +36,6 @@ export function register(name, user, pass, img) {
     }
     contactList.push(con);
 }
-// export function passwordLength(pass) {
-
-// }
 export function isEmpty(values) {
     const errors = {};
     if(!values.user) {

@@ -35,7 +35,6 @@ function Messages({ user, chooseChat }) {
     })
     return (
         <div className="chat">
-            {/* <DisplayContact></DisplayContact> */}
             <div className="messageList">
                 <div class="scroller overflow-auto">
                     {elements}

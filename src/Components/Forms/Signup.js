@@ -98,7 +98,6 @@ function Signup(g) {
                 
                 <div className="input-group mb-3">
                     <input name='img' onChange={handleImg} type="file" className="form-control inputGroupFile02"></input>
-                    {/* <label className="input-group-text btn-primary" htmlFor="inputGroupFile02">Upload</label> */}
                     
                 </div>
                 <p className = "valErr"> {formErrors.img} </p>

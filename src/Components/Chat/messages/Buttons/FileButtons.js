@@ -8,7 +8,7 @@ function FileButtons({id, accepts, link1, link2, chooseFileType}) {
     return(
         <div>
             <input type="file" id={id} accept={accepts} onChange={handleChangeInFile} hidden></input>
-            <label for={id} class="btn btn-outline-dark btn-sm" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+            <label for={id} class="btn btn-outline-dark btn-sm" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="28" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
                 <path d={link1}></path>
                 <path d={link2}></path>
             </svg></label>
