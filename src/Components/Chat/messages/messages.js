@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { retCon } from "../../../Data/ContactList";
+import UserService from "../../../Services/UserService";
 import InputBar from "./InputBar";
 import Message from "./Message";
 
-function Messages({ user, chooseChat }) {
+async function Messages({ user, chooseChat }) {
 
     var msgTemplate = { content: "", time: "", me: true };
     var friendName = Object.keys(user)[0];
-    var friend = retCon(friendName);
+    var friend = await UserService.getUserById(friendName);
     var ch = user[friendName];
     console.log(user);
 

@@ -4,7 +4,7 @@ import Contacts from './Contacts/Contacts'
 import Contact from './Contacts/Contact'
 import InputBar from './messages/InputBar';
 import Messages from './messages/Messages';
-import { retCon } from '../../Data/ContactList';
+import UserService from '../../Services/UserService';
 import UserBar from './Contacts/UserBar';
 function Chat(user) {
 
@@ -15,6 +15,8 @@ function Chat(user) {
     }
 
     function DisplayMessages() {
+        debugger;
+
         if (currentChat == null) return <div></div>
 
         else return (
@@ -24,21 +26,24 @@ function Chat(user) {
         )
     }
 
-    function DisplayContact() {
+    async function DisplayContact() {
+        debugger;
+
         if (currentChat == null) return <div class="chat-with-s"> Glad to have you! 'Toki'-ing today?</div>
         else {
-            var find =retCon(Object.keys(currentChat)[0]);
+            debugger;
+            var find = await UserService.getUserById(Object.keys(currentChat)[0]);
             return (
                 <div class="chat-about">
                     <div class="chat-with">
-                        <div> {find.name} ({find.user}) </div>
-                        <img src={find.img} ></img>
+                        <div> {find.name} ({find.id}) </div>
+                        <img src="public\images\TokiLogo.png" ></img>
                     </div>
                 </div>
             )
         }
     }
-    console.log(currentChat);
+
     return (
         <div className='chatWin'>
             <div class="row g-0 no-gutters">

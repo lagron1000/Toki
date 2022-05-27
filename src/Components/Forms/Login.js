@@ -1,12 +1,15 @@
 import './Form.css';
 import { useState, useEffect } from 'react';
-import contactList from '../../Data/ContactList';
+// import contactList from '../../Data/ContactList';
 import signIn from '../Env/Env';
 import Env from '../Env/Env';
-import * as helpers from './helpers';
+import FormService from '../../Services/FormService';
+import UserService from '../../Services/UserService';
 // im
 
 function Login({f, g}) {
+
+    let contactList = [];
 
     var signInFunc = f;
     var signUpFunc = g;
@@ -19,6 +22,7 @@ function Login({f, g}) {
     const [formVals, setFormVals] = useState(values)
     const [formErrors, setFormErrors] =  useState({});
     const [isSubmitted, setIsSubmit] = useState(false);
+
     const handleChange = (event) => {
         if (event.code === "Enter" || event.code === "NumpadEnter") {
             handleSubmit();
@@ -29,28 +33,39 @@ function Login({f, g}) {
         }
     }
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+
+        contactList = await UserService.getUserList();
+
         console.log(contactList)
         var found = contactList.find((c)=> {
-            if (c.user == formVals["user"]) return c;
+            if (c.id == formVals["user"]) return c;
         })
         if (found) {
-            if (found.pword == formVals["pass"]) {
-                signInFunc(found);
+            if (found.password == formVals["pass"]) {
+                let usr = await UserService.getUserById(found.id);
+                if (usr == null) {
+                    signInFunc({
+                        "id": "NOTFOUND",
+                        "name": "NOTFOUND",
+                        "contactList": []
+                    })
+                } else signInFunc(usr);
+                
             }
             else {
                 e.preventDefault();
-                setFormErrors(helpers.isExist("password"));
+                setFormErrors(FormService.isExist("password"));
                 setIsSubmit(true);
             }
         }
         else {
             e.preventDefault();
-            setFormErrors(helpers.isExist("user"));
+            setFormErrors(FormService.isExist("user"));
             setIsSubmit(true);
         }
         if(formVals.pass==="" || formVals.user === "") {
-            setFormErrors(helpers.isEmpty(formVals));
+            setFormErrors(FormService.isEmpty(formVals));
         }
     }
     useEffect(() => {

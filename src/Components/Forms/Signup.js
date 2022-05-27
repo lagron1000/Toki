@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import contactList from '../../Data/ContactList';
+import UserService from '../../Services/UserService';
 import './Form.css';
-import * as helpers from './helpers';
+import FormService from '../../Services/FormService';
 function Signup(g) {
 
     var signInFunc = g["g"];
@@ -38,18 +38,20 @@ function Signup(g) {
 
     }
     
-    const handleSubmit = (e) => {
-        console.log(contactList);
-        
-        helpers.register(
-            formVals["fullName"],
-            formVals["user"],
-            formVals["pword"],
-            formVals["pword2"],
-            formVals["img"]
-        )
+    const handleSubmit = async (e) => {
+        debugger;
+
+        await UserService.addNewUser(formVals["user"], formVals["fullName"], formVals["pword"]);
+
+        // FormService.register(
+        //     formVals["fullName"],
+        //     formVals["user"],
+        //     formVals["pword"],
+        //     formVals["img"]
+        // )
+
         e.preventDefault();
-        const formErrors = helpers.isValid(formVals);
+        const formErrors = FormService.isValid(formVals);
         setFormErrors({...formErrors, formErrors});
         setIsSubmit(true);
         if(Object.keys(formErrors).length===0) {
@@ -96,10 +98,10 @@ function Signup(g) {
                     <p className = "valErr"> {formErrors.pword2} </p>
                 </div>
                 
-                <div className="input-group mb-3">
+                {/* <div className="input-group mb-3">
                     <input name='img' onChange={handleImg} type="file" className="form-control inputGroupFile02"></input>
-                    
-                </div>
+                </div> */}
+
                 <p className = "valErr"> {formErrors.img} </p>
                 <div className="input-group mb-3">
                 <a on class="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>

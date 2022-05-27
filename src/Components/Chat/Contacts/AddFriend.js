@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { retCon } from '../../../Data/ContactList';
+import UserService from '../../../Services/UserService';
 import './AddFriend.css';
 
 function AddFriend(props) {
@@ -15,14 +15,15 @@ function AddFriend(props) {
 
     function foundCon(newC) {
         var found = null
-        found = props.user.user.chatHistory.find((c) => {
+        debugger;
+        found = props.user.user.contactList.find((c) => {
             if (Object.keys(c)[0] == newC) return c;
         })
         return found;
     }
 
-    function search() {
-        var friend = retCon(searchVar);
+    async function search() {
+        var friend = await UserService.getUserById(searchVar);
         if (!friend) {
             alert("User not found")
         }

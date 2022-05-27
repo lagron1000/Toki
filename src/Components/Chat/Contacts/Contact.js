@@ -1,4 +1,7 @@
-function Contact({ friend, img, lastMsg, meObj }) {
+function Contact({ friend, meObj }) {
+
+    debugger;
+    var lastMsg = null;
 
     var msgContent = lastMsg ? lastMsg.content : "";
 
@@ -13,7 +16,7 @@ function Contact({ friend, img, lastMsg, meObj }) {
         <div className="card table-hover contact">
             <p class="card-header mb-3" >{friend.name}</p>
             <div className="content">
-                <img className="pfp mb-3" src={img}></img>
+                <img className="pfp mb-3" src="public\images\TokiLogo.png"></img>
                 <p className="cardText">{msgSender} {msgContent} {timeStamp}</p>
             </div>
         </div>

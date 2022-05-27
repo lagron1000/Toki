@@ -1,19 +1,19 @@
-import contactList, { retCon } from "../../../Data/ContactList";
+import UserService from "../../../Services/UserService";
 import cList from '../../../Data/Contacts.json';
 import Contact from "./Contact";
+import ContactService from "../../../Services/ContactService";
 
 function Contacts({ user, chooseChat }) {
+    // var myCons = user.user.chatHistory;d
+    user = user.user;
+    var myCons = user.contactList;
 
-    var myCons = user.user.chatHistory;
-
-    const elements = myCons.map((c, key) => {
-        var name = Object.keys(c)[0];
-        var numOfMsgs = c[name].length;
-        var lastMsg = c[name][numOfMsgs - 1];
-        var friend = retCon(name);
+    const elements = myCons.map( async(friend, key) => {
+        // var numOfMsgs = c.messages.length;
+        // var lastMsg = c.messages[numOfMsgs - 1];
         return (
-            <div key={key} onClick={()=>{chooseChat(c)}}>
-                <Contact friend={friend} img={friend.img} lastMsg={lastMsg} meObj={user} ></Contact>
+            <div key={key} onClick={()=>{chooseChat(friend)}}>
+                <Contact friend={friend} /*img={"public\images\TokiLogo.png"} lastMsg={lastMsg}*/ meObj={user} ></Contact>
             </div>
         )
     })

@@ -207,6 +207,7 @@ nav ul li ul li a:hover {
   width: fit-content;
   border: 7px solid rgb(153, 215, 183);
   margin-top: 20px;
+  border-radius: 12px;
 }
 
 .content {
