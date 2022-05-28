@@ -1,3 +1,13 @@
+This project is built in React.
+start using npm start.
+install signalR use npm i --save @microsoft/signalr
+Each component has its own responsibilites.
+In order to send any type of message, choose the wanted file and upload it using the “send” button.
+In order to send an audio record, pressing the audio button once will start the recording and pressing the button again will end the recording.
+In this case, once done there is a need in pressing the “send” button.
+When one wants to add a contact to the list, one needs to enter an existing name in the system.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
