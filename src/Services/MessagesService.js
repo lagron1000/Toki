@@ -1,7 +1,7 @@
 
 const MessagesService = {
 
-    getMessageList: async function(signedId) {
+    getMessageList: async function(id, signedId) {
         let res = await fetch(`http://localhost:5143/api/Contacts/${id}/messages?signedId=${signedId}`);
         if (res.status == 200) return await res.json();
     },

@@ -39,7 +39,6 @@ function Signup(g) {
     }
     
     const handleSubmit = async (e) => {
-        debugger;
 
         await UserService.addNewUser(formVals["user"], formVals["fullName"], formVals["pword"]);
 

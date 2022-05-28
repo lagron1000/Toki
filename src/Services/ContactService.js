@@ -7,12 +7,12 @@ const ContactService = {
     addNewContact: async function(id, name, server, signedId) {
         let contact = {
             id : id,
-            name : name,
+            name : name ? name : id,
             server : server
         }
     
         try {
-            await fetch(`http://localhost:5143/api/Contacts/${id}?signedId=${signedId}`, {
+            await fetch(`http://localhost:5143/api/Contacts?signedId=${signedId}`, {
             method : "POST",
             headers : {
                 "Content-Type" : "application/json"
