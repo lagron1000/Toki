@@ -78,7 +78,7 @@ function Login({f, g}) {
     return (
         <div className='FormContainer'>
             <div className="Form">
-                <h3 className="display-6">Sign In</h3>
+                <h3 className="display-6">Sign In</h3> 
                 <div className="form-floating mb-3">
                     <input name='user' value={formVals.user} onChange={handleChange} onKeyDown ={handleChange}
                     type="text" className="form-control" id="floatingInput" placeholder="Username"></input>
@@ -94,7 +94,9 @@ function Login({f, g}) {
                 </div>
 
                 <div className="input-group mb-3">
+                <a on className="btn btn-success sub" href='https://localhost:7003' >Reviews</a>
                 <a on className="btn btn-secondary sub" type="submit" onClick={handleSubmit} >Submit</a>
+
                 </div>
 
                 <a className="link" onClick={signUpFunc} >Don't have an account?</a>
