@@ -1,3 +1,9 @@
+*
+עודכן באישור של יותם המתרגל. הוספנו רק כפתור ששולח אל עמוד הדירוגים.
+תאריך ההגשה המקורי היה ה28.05 כלומר השתמשנו רק ביום חסד אחד
+הבראנץ' הרלוונטי הוא ex2.
+*
+
 This project is built in React.
 Each component has its own responsibilites.
 In order to send any type of message, choose the wanted file and upload it using the “send” button.
