@@ -45,7 +45,6 @@ function Signup(g) {
             formVals["fullName"],
             formVals["user"],
             formVals["pword"],
-            formVals["pword2"],
             formVals["img"]
         )
         e.preventDefault();
